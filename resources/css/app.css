@@ -1,0 +1,83 @@
+@import 'tailwindcss';
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('../fonts/Cairo-Regular.ttf');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('../fonts/Cairo-Bold.ttf');
+    font-weight: bold;
+}
+
+
+body {
+    @apply font-[Tajawal] font-normal text-lg bg-slate-100;
+}
+
+header {
+    /* @apply ; */
+    font-family: Cairo;
+    font-size: large;
+}
+
+footer {
+    font-family: Cairo;
+    font-size: medium;
+}
+
+h1 {
+    font-family: Cairo;
+    font-size: 65px;
+}
+h2 {
+    font-family: Cairo;
+}
+
+.page-header{
+    @apply my-5 text-2xl md:text-4xl font-bold mb-6 text-teal-600 text-center;
+}
+
+.mh-logo-border {
+    @apply border-r-amber-600/90 border-b-amber-600/90 
+    border-t-teal-500 border-l-teal-500 backdrop-blur-sm
+    border-r-6 border-b-6 border-2 rounded-ss-lg rounded-se-full;
+}
+/* Animations and Decorations */
+.curvy-underline {
+    position: relative;
+    display: inline-block; /* Important for proper width calculation */
+}
+
+.curvy-underline::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Adjust as needed for vertical positioning */
+    left: 0;
+    width: 100%;
+    height: 5px; /* Adjust for thickness of the underline */
+    background: url('path/to/your/curvy-underline.svg') repeat-x bottom center; /* Use an SVG for the curve */
+    background-size: auto 100%;
+}
+
+.mh-pulse-on-hover {
+    @apply hover:animate-pulse;
+}
