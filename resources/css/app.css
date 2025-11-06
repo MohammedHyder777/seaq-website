@@ -61,6 +61,29 @@ h2 {
     border-t-teal-500 border-l-teal-500 backdrop-blur-sm
     border-r-6 border-b-6 border-2 rounded-ss-lg rounded-se-full;
 }
+
+
+/**************** MUTUAL LIST ****************/
+@media (min-width: 1027px) {
+    .mutual-list{
+        @apply flex flex-col items-start gap-2 mx-8;
+    }
+    
+    .mutual-list-card {
+        @apply w-4/5 p-5 m-3 cursor-pointer;
+    }
+    
+    /* Even cards: right */
+    .mutual-list-card:nth-child(even) {
+        align-self: flex-end;
+    }
+    
+    /* Odd cards: left */
+    .mutual-list-card:nth-child(odd) {
+        align-self: flex-start;
+    }
+}
+
 /* Animations and Decorations */
 .curvy-underline {
     position: relative;
