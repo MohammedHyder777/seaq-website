@@ -70,11 +70,12 @@ h2 {
     }
     
     .mutual-list-card {
-        @apply w-4/5 p-5 m-3 cursor-pointer;
+        @apply w-4/5 m-3 cursor-pointer;
     }
     
     /* Even cards: right */
     .mutual-list-card:nth-child(even) {
+        @apply md:flex-row-reverse;
         align-self: flex-end;
     }
     

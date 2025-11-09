@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 Route::get('/', fn() => view('home'))->name('home');
 Route::get('/join', fn() => view('join'))->name('join');
@@ -37,3 +38,12 @@ Route::get('/events', function () {
     return view('events', compact('events'));
 
 })->name('events');
+
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index'); // MUST BE EDITED OR DELETED
+Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('posts', PostController::class);
+});
+
+

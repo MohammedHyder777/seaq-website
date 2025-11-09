@@ -3,7 +3,7 @@
 @section('title', 'انضم للرابطة')
 
 @section('content')
-<h2 class="page-header">انضم إلى رابطة المهندسين</h2>
+<h2 class="page-header">انضم إلى الرابطة</h2>
 
 <div class="aspect-w-16 aspect-h-9">
   <iframe 
