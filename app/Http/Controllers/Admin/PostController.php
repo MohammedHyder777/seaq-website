@@ -86,7 +86,7 @@ class PostController extends Controller
 
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('images/posts', 'public');
-        } elseif ($post->image) { // If the post has an image already and the (removImage) button clicked
+        } elseif ($request->filled("remove_image")) { // If the post has an image already and the (removImage) button clicked
             Storage::disk('public')->delete($post->image);
             $post->update(['image' => null]);
         } 

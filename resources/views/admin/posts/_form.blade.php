@@ -24,11 +24,12 @@
 
   <!-- Image -->
   <div>
+    {{$post->image}}
     <label class="block flex flex-row gap-5 text-gray-700 font-medium mb-1">
       الصورة
       <p class="mt-1 text-sm text-gray-500">إن لم ترغب في {{$action}} الصورة فاترك حقل الصورة فارغا.</p>
     </label>
-    <input type="file" name="image" id="image"
+    <input type="file" name="image" id="image" value="{{old('image', $post->image ?? '')}}"
       class="w-full text-gray-700 border border-gray-300 rounded-lg px-3 py-2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-teal-500">
     {{-- @if(!empty($post->image)) --}}
     @if(isset($post) && $post->image)
@@ -38,6 +39,8 @@
       <button type="button" onclick="removeImage()" class="flex items-center text-red-600 hover:text-red-800 cursor-pointer">
         <i class="fa fa-trash mr-1"></i> حذف الصورة
       </button>
+
+      <input type="hidden" name="remove_image" id="remove-image">
     </div>
     @endif
   </div>
@@ -94,8 +97,8 @@
   function removeImage() {
 
     if(!confirm('أترغب في إزالة صورة هذا المنشور؟')) return;
-    // Set the image file to '';
-    document.getElementById("image").value = null;
+    // Set the remove_image input value to 1;
+    document.getElementById('remove-image').value = 1;
     // Hide the image preview (image and remove button)
     document.getElementById("image-preview").style.display = 'none';
 
