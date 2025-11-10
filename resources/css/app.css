@@ -70,7 +70,7 @@ h2 {
     }
     
     .mutual-list-card {
-        @apply w-4/5 m-3 cursor-pointer;
+        @apply w-4/5 m-3;
     }
     
     /* Even cards: right */
@@ -85,6 +85,10 @@ h2 {
     }
 }
 
+/* Forms, Inputs and Buttons */
+input[type=checkbox] {
+    @apply cursor-pointer;
+}
 /* Animations and Decorations */
 .curvy-underline {
     position: relative;

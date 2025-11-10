@@ -16,9 +16,11 @@ class Post extends Model
         'order_at_home',
     ];
 
-    public function scopeShownAtHome($query)
+    public static function scopeShownAtHome()
     {
-        return $query->where('is_shown', true)
-                    ->orderBy('order_at_home');
+        return Post::where('is_shown', true)
+            ->orderBy('order_at_home')->latest()
+            ->take(5)
+            ->get();
     }
 }

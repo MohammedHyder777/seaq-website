@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\Admin\PostController as AdminPostController;
 
-Route::get('/', fn() => view('home'))->name('home');
+Route::get('/', fn() => view('home', ['posts' => Post::scopeShownAtHome()]))->name('home');
 Route::get('/join', fn() => view('join'))->name('join');
 Route::get('/about', fn() => view('about'))->name('about');
 Route::get('/events', function () {
@@ -39,11 +41,15 @@ Route::get('/events', function () {
 
 })->name('events');
 
-Route::get('/posts', [PostController::class, 'index'])->name('posts.index'); // MUST BE EDITED OR DELETED
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
 Route::prefix('admin')->name('admin.')->group(function () {
-    Route::resource('posts', PostController::class);
+    Route::resource('posts', AdminPostController::class);
+    Route::delete('/imageDestroy/{post}', [AdminPostController::class, 'imageDestroy'])
+    ->name('imageDestroy');
 });
+
+
+
 
 

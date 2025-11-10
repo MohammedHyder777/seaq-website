@@ -12,8 +12,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::latest()->paginate(10);
-        return view('posts.index', compact('posts'));
+        // $posts = Post::latest()->paginate(10);
+        // return view('posts.index', compact('posts'));
     }
 
     /**
@@ -21,7 +21,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        
     }
 
     /**
@@ -29,21 +29,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'title_en' => 'nullable|string|max:255',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-            'body' => 'required|string',
-            'body_en' => 'nullable|string',
-        ]);
-
-        if ($request->hasFile('image')) {
-            $validated['image'] = $request->file('image')->store('posts', 'public');
-        }
-
-        Post::create($validated);
-
-        return redirect()->route('posts.index')->with('success', 'أنشئ المقال بحمد الله.');
+        
     }
 
     /**
@@ -51,7 +37,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return view('posts.show', compact('post'));
+        return view('showpost', compact('post'));
     }
 
     /**
