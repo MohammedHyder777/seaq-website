@@ -8,43 +8,47 @@
 
     <div class="space-y-6">
         @foreach ($events as $event)
-        <div class="mh-card flex flex-col h-fit sm:flex-row bg-white rounded-2xl shadow-md hover:shadow-lg opacity-0 translate-y-10 transition-all duration-700 ease-out">
+        <div class="mh-card flex flex-col h-fit md:flex-row bg-white rounded-2xl shadow-md hover:shadow-lg opacity-0 translate-y-10 transition-all duration-700 ease-out">
 
             {{-- Event image --}}
-            <img src="{{ $event->image_url ?? asset('images/logos/logo-w-text.png') }}" alt="{{ $event->title }}"
-                 class="w-full sm:w-1/3 rounded-t-2xl sm:rounded-t-0 sm:rounded-r-2xl object-cover">
+            <img src="{{ $event->image? asset('storage/' . $event->image) : asset('images/logos/logo-w-text.png') }}" alt="{{ $event->title }}"
+                class="w-full h-full md:w-3/7 rounded-t-2xl md:rounded-se-none md:rounded-s-2xl object-cover">
 
             {{-- Event details --}}
             <div class="flex flex-col justify-between p-5 flex-1 text-right">
 
                 <div>
-                    <h2 class="text-2xl font-semibold text-gray-800 mb-3">{{ $event->title }}</h2>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-3">{{ $lang == 'ar'? $event->title : $event->title_en }}</h2>
 
                     {{-- Description --}}
                     <p class="text-gray-700 leading-relaxed mb-4 line-clamp-3">
-                        {{ $event->description ?? '' }}
+                        {{ ($lang == 'ar'? $event->desc : $event->desc_en) ?? '' }}
                     </p>
 
-                    <div class="flex flex-row items-center text-gray-600 mb-2">
-                        {{-- Calendar icon --}}
-                        <svg xmlns="http://www.w3.org/2000/svg" 
-                             class="h-5 w-5 text-teal-500 ml-2" fill="none" 
-                             viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        <span>{{ $event->date }} – {{ $event->time }}</span>
+                    {{-- Date --}}
+                    <div class="flex flex-row items-center gap-3 text-gray-600 mb-2">
+                        <i class="fa fa-calendar text-xl text-teal-500"></i>
+                        <span>{{$lang == 'ar'? 'ال':''}}{{ \Carbon\Carbon::parse($event->date)->translatedFormat('D d - m - Y') }}</span>
                     </div>
 
-                    <div class="flex flex-row items-center text-gray-600 mb-4">
-                        {{-- Location icon --}}
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                             class="h-5 w-5 text-teal-500 ml-2"
-                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm0 10s6-6.438 6-10a6 6 0 10-12 0c0 3.562 6 10 6 10z" />
-                        </svg>
-                        <span>{{ $event->location }}</span>
+                    {{-- Time --}}
+                    @if($event->time)
+                    <div class="flex flex-row items-center gap-3 text-gray-600 mb-2">
+                        <i class="fa fa-clock text-xl text-teal-500"></i>
+                        <span>{{ \Carbon\Carbon::parse($event->time)->translatedFormat('g:i A') }}</span>
+                    </div>
+                    @endif
+
+                    {{-- Location --}}
+                    <div class="flex flex-row items-center text-gray-600 gap-3 mb-4">
+                        <i class="fa fa-location-dot text-xl text-teal-500"></i>
+                        <span>{{ $lang == 'ar'? $event->location : $event->location_en }}</span>
+                        @if($event->location_url)
+                        <a href="{{$event->location_url}}" target="_blank" class="flex flex-col items-center gap-1">
+                            <i class="text-lg fa-duotone fa-solid fa-arrow-up-right-from-square"></i>
+                            <p class="text-sm bg-gray-300 px-1 rounded-xl">{{ $lang == 'ar' ? 'خرائط جوجل' : 'google map' }}</p>
+                        </a>
+                        @endif
                     </div>
                 </div>
 

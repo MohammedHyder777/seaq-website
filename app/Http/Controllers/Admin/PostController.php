@@ -77,7 +77,7 @@ class PostController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'title_en' => 'nullable|string|max:255',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:3072',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:10240',
             'body' => 'nullable|string',
             'body_en' => 'nullable|string',
             'is_shown' => 'boolean',

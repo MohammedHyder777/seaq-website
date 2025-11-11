@@ -24,7 +24,6 @@
 
   <!-- Image -->
   <div>
-    {{$post->image}}
     <label class="block flex flex-row gap-5 text-gray-700 font-medium mb-1">
       الصورة
       <p class="mt-1 text-sm text-gray-500">إن لم ترغب في {{$action}} الصورة فاترك حقل الصورة فارغا.</p>

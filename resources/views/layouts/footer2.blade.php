@@ -1,7 +1,7 @@
 <footer class="bg-amber-600/80">
     <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div class="grid row-gap-10 mb-4 items-center lg:grid-cols-5">
-            <div class="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 xl:grid-cols-4">
+            <div class="max-md:flex max-md:flex-col grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 xl:grid-cols-4">
                 <div>
                     <p class="font-medium tracking-wide text-white">موقعنا</p>
                     <ul class="mt-2 space-y-8">

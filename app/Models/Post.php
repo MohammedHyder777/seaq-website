@@ -20,7 +20,7 @@ class Post extends Model
     {
         return Post::where('is_shown', true)
             ->orderBy('order_at_home')->latest()
-            ->take(5)
+            ->take(7)
             ->get();
     }
 }
