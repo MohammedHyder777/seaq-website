@@ -51,7 +51,7 @@
       <span class="text-red-500 ml-1 rtl:ml-0 rtl:mr-1" aria-hidden="true">*</span>
       <span class="sr-only">required</span>
     </label>
-    <textarea name="body" rows="4"
+    <textarea id="body" name="body" rows="4"
       class="w-full border border-gray-300 focus:ring-teal-500 focus:border-teal-500 rounded-lg px-4 py-2 text-gray-800">{{ old('body', $post->body ?? '') }}</textarea>
   </div>
 
@@ -92,6 +92,31 @@
 
 </div>
 
+
+<script src="https://cdn.jsdelivr.net/npm/tinymce@7.4.1/tinymce.min.js"></script>
+<script>
+  tinymce.init({
+    selector: '#body',
+    height: 400,
+    menubar: true,
+    directionality: 'rtl',
+    plugins: 'link lists image imagetools code',
+    toolbar: 'undo redo | bold italic underline | bullist numlist | align | link | code',
+    branding: false,
+    paste_data_images: true
+  });
+
+  tinymce.init({
+    selector: '#body_en',
+    height: 400,
+    menubar: true,
+    // directionality: 'rtl',
+    plugins: 'link lists image imagetools code',
+    toolbar: 'undo redo | bold italic underline | bullist numlist | align | link | code',
+    branding: false,
+    paste_data_images: true
+  });
+</script>
 <script>
   function removeImage() {
 

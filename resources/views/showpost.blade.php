@@ -9,7 +9,7 @@
     <img src="{{ isset($post->image)? asset('storage/'.$post->image) : asset('images/logos/logo-w-text.png') }}" alt="صورة">
 
     <div class="text-md text-justify ">
-        &nbsp;&nbsp;&nbsp;&nbsp;{{ $lang == 'ar'? $post->body : $post->body_en }}
+        &nbsp;&nbsp;&nbsp;&nbsp;{!! $lang == 'ar'? $post->body : $post->body_en !!}
     </div>
 </div>
 @endsection

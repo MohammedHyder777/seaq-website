@@ -22,7 +22,7 @@
 
                     {{-- Description --}}
                     <p class="text-gray-700 leading-relaxed mb-4 line-clamp-3">
-                        {{ ($lang == 'ar'? $event->desc : $event->desc_en) ?? '' }}
+                        {!! ($lang == 'ar'? $event->desc : $event->desc_en) ?? '' !!}
                     </p>
 
                     {{-- Date --}}
