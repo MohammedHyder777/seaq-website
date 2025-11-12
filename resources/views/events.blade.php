@@ -12,7 +12,7 @@
 
             {{-- Event image --}}
             <img src="{{ $event->image? asset('storage/' . $event->image) : asset('images/logos/logo-w-text.png') }}" alt="{{ $event->title }}"
-                class="w-full h-full md:w-3/7 rounded-t-2xl md:rounded-se-none md:rounded-s-2xl object-cover">
+                class="w-full h-full md:w-5/12 rounded-t-2xl md:rounded-se-none md:rounded-s-2xl object-cover">
 
             {{-- Event details --}}
             <div class="flex flex-col justify-between p-5 flex-1 text-right">

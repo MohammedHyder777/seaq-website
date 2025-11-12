@@ -15,6 +15,9 @@ Route::get('/events', fn() => view('events', ['events' => Event::scopeShown()]))
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
 Route::prefix('admin')->name('admin.')->group(function () {
+
+    Route::get('/dashboard', fn() => view('admin.dashboard'))->name('dashboard');
+    
     Route::resource('posts', AdminPostController::class);
     Route::delete('/imageDestroy/{post}', [AdminPostController::class, 'imageDestroy'])
     ->name('imageDestroy');
