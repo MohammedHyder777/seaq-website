@@ -58,7 +58,7 @@
   <!-- Body EN -->
   <div>
     <label class="block text-gray-700 font-medium mb-1">المحتوى (EN)</label>
-    <textarea name="body_en" rows="4"
+    <textarea id="body" name="body_en" rows="4"
       class="w-full border border-gray-300 focus:ring-teal-500 focus:border-teal-500 rounded-lg px-4 py-2 text-gray-800">{{ old('body_en', $post->body_en ?? '') }}</textarea>
   </div>
 

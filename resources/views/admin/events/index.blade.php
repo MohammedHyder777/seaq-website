@@ -1,11 +1,11 @@
 @extends('admin.layout')
 
 @section('content')
-<div class="p-6">
+<div class="p-1 md:p-6">
   <div class="flex flex-col md:flex-row items-center justify-between mb-6">
     <h2 class="page-header">إدارة الفعاليات</h2>
     <a href="{{ route('admin.events.create') }}" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-md transition">
-      فعالية جديدة 📝
+      فعالية جديدة 📆
     </a>
   </div>
 

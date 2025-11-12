@@ -73,7 +73,7 @@
     <input type="url" name="location_url" value="{{ old('location_url', $event->location_url ?? '') }}" class="w-full border border-gray-300 focus:ring-teal-500 focus:border-teal-500 rounded-lg px-4 py-2 text-gray-800">
   </div>
 
-  <div class="flex gap-4">
+  <div class="flex max-sm:flex-col gap-4">
     <div>
       <label class="text-gray-700 font-medium mb-1">
         التاريخ

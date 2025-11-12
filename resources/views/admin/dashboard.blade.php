@@ -1,7 +1,7 @@
 @extends('admin.layout')
 
 @section('content')
-  <h1 class="page-header">شاشة التحكم</h1>
+  <h1 class="page-header">لوح التحكم</h1>
 
   <div class="flex flex-col">
     <div class="flex flex-col md:flex-row justify-evenly self-center gap-5 w-2/3 mx-5 my-10 text-2xl" id="pages-buttons">
