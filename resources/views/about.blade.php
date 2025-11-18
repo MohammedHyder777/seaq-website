@@ -5,6 +5,8 @@
 @section('content')
 <h2 class="page-header"> رابطة المهندسين السودانيين بدولة قطر</h2>
 
-{!! $content !!}
+<div class="m-auto w-5/6">
+    {!! $content !!}
+</div>
 
 @endsection
