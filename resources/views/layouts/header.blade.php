@@ -4,10 +4,13 @@
         <img src="{{ asset('images/logos/logo-w-text.png') }}" height="110" width="177" alt="الشعار">
     </a>
     <nav class="hidden md:flex relative space-x-1 pr-1 bg-teal-500 backdrop-blur-sm border border-teal-600/90 shadow-lg text-slate-100 w-full">
+        @if(auth()->user()?->is_admin)
+        <a class="py-3 px-3 text-xl font-medium {{ request()->routeIs('admin.*')? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('admin.dashboard') }}">لوحة التحكم</a>
+        @endif
         <a class="py-3 px-3 text-xl font-medium {{ Request::is('/')? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('home') }}">الرئيسة</a>
         <a class="py-3 px-3 text-xl font-medium {{ Request::is('events')? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('events') }}">البرامج والفعاليات</a>
         <a class="py-3 px-3 text-xl font-medium {{ Request::is('join') ? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('join') }}">انضم إلينا</a>
-        <a class="py-3 px-3 text-xl font-medium {{ Request::is('#') ? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="#">من نحن؟</a>
+        <a class="py-3 px-3 text-xl font-medium {{ Request::is('about') ? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('about') }}">من نحن؟</a>
     </nav>
 
     <!-- Mobile title and toggle button -->
@@ -30,7 +33,7 @@
         <a class="text-lg font-medium pr-2 {{ Request::is('/') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('home') }}">الرئيسة</a>
         <a class="text-lg font-medium pr-2 {{ Request::is('events') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('events') }}">البرامج والفعاليات</a>
         <a class="text-lg font-medium pr-2 {{ Request::is('join') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('join') }}">انضم إلينا</a>
-        <a class="text-lg font-medium pr-2 {{ Request::is('#') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="#">من نحن؟</a>
+        <a class="text-lg font-medium pr-2 {{ Request::is('about') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('about') }}">من نحن؟</a>
     </nav>
 
     <script>
@@ -40,7 +43,7 @@
 
         document.addEventListener('click', function(event) {
             const mobileNav = document.getElementById('mobile-nav');
-            
+
             // If menu is hidden, skip
             if (mobileNav.classList.contains('hidden')) return;
 

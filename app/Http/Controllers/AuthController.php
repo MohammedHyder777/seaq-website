@@ -28,7 +28,9 @@ class AuthController extends Controller
                 return back()->withErrors(['email' => 'Unauthorized access.']);
             }
 
-            return redirect()->intended('/admin');
+            // return redirect()->intended('/admin');
+            // return redirect()->away('https://' . env('ADMIN_DOMAIN', 'dashboard.mysite.net'));
+            return redirect()->away(route('admin.dashboard'));
         }
 
         return back()->withErrors([

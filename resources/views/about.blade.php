@@ -3,6 +3,8 @@
 @section('title', 'من نحن؟')
 
 @section('content')
-<h2 class="text-2xl font-bold mb-6 text-center"> رابطة المهندسين السودانيين بدولة قطر</h2>
+<h2 class="page-header"> رابطة المهندسين السودانيين بدولة قطر</h2>
+
+{!! $content !!}
 
 @endsection

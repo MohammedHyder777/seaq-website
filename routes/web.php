@@ -6,12 +6,14 @@ use App\Models\Event;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\Admin\PostController as AdminPostController;
 use App\Http\Controllers\Admin\EventController as AdminEventController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\AuthController;
 use App\Http\Middleware\IsAdmin;
+use App\Models\Setting;
 
 Route::get('/', fn() => view('home', ['posts' => Post::scopeShownAtHome()]))->name('home');
 Route::get('/join', fn() => view('join'))->name('join');
-Route::get('/about', fn() => view('about'))->name('about');
+Route::get('/about', fn() => view('about', ['content' => Setting::get(app()->getLocale() == "ar"? "about_us_content" : "about_us_content_en")]))->name('about');
 Route::get('/events', fn() => view('events', ['events' => Event::scopeShown()]))->name('events');
 
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
@@ -26,12 +28,17 @@ Route::middleware(['auth', IsAdmin::class,
 ])->prefix('admin')->name('admin.')->group(function () {
 
     Route::get('/dashboard', fn() => view('admin.dashboard'))->name('dashboard');
+
+    Route::get('/aboutus', [SettingController::class, 'editAboutUs'])->name('aboutus');
+    Route::post('/aboutus', [SettingController::class, 'updateAboutUs'])->name('aboutus.update');
+    
     
     Route::resource('posts', AdminPostController::class);
     Route::delete('/imageDestroy/{post}', [AdminPostController::class, 'imageDestroy'])
     ->name('imageDestroy');
 
     Route::resource('events', AdminEventController::class);
+
 });
 
 
