@@ -63,7 +63,7 @@
                 class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1.5 rounded-lg text-xs shadow-sm">
                 تعديل
               </a>
-              <form action="{{ route('admin.events.destroy', $event) }}" method="event" onsubmit="return confirm('أترغب في حذف هذا المنشور؟')">
+              <form action="{{ route('admin.events.destroy', $event) }}" method="event" onsubmit="return confirm('أترغب في حذف هذه الفعالية؟')">
                 @csrf @method('DELETE')
                 <button type="submit"
                   class="bg-red-500 hover:bg-red-600 text-white px-3 py-1.5 rounded-lg text-xs shadow-sm hover:cursor-pointer">

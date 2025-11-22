@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\App;
 use App\Models\Post;
 use App\Models\Event;
 use App\Http\Controllers\PostController;
@@ -11,12 +12,24 @@ use App\Http\Controllers\AuthController;
 use App\Http\Middleware\IsAdmin;
 use App\Models\Setting;
 
+
 Route::get('/', fn() => view('home', ['posts' => Post::scopeShownAtHome()]))->name('home');
 Route::get('/join', fn() => view('join'))->name('join');
 Route::get('/about', fn() => view('about', ['content' => Setting::get(app()->getLocale() == "ar"? "about_us_content" : "about_us_content_en")]))->name('about');
 Route::get('/events', fn() => view('events', ['events' => Event::scopeShown()]))->name('events');
 
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+
+// Language route
+Route::get('/lang/{locale}', function ($locale) {
+    if (in_array($locale, ['ar', 'en'])) {
+        session(['locale' => $locale]); // The middleware will sret the this value as the App locale
+        // app()->setLocale($locale);
+    }
+
+    return redirect()->back();
+})->name('lang.switch');
+
 
 // Login routes
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');

@@ -32,6 +32,9 @@
     @error('email')
       <p class="text-red-500 text-sm mb-4">{{ $message }}</p>
     @enderror
+    @error('password')
+      <p class="text-red-500 text-sm mb-4">{{ $message }}</p>
+    @enderror
 
     <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white py-2 rounded-lg font-medium">دخول</button>
   </form>

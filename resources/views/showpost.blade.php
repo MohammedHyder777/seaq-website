@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'رابطة المهندسين السودانيين بقطر')
+@section('title', 'رابطة المهندسين')
 
 @section('content')
 <h2 class="page-header">{{ $lang == 'ar'? $post->title : $post->title_en }}</h2>

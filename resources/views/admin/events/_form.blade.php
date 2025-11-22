@@ -114,7 +114,7 @@
   /*
   function removeImage() {
 
-    if (!confirm('أترغب في إزالة صورة هذا المنشور؟')) return;
+    if (!confirm('أترغب في إزالة صورة هذه الفعالية؟')) return;
     // Set the remove_image input value to 1;
     document.getElementById('remove-image').value = 1;
     // Hide the image preview (image and remove button)
