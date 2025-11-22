@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'الرئيسة')
+@section('title', __('strings.home_tab_title'))
 
 @section('content')
 
 
 <h1 class="md:hidden text-xl text-center page-header">رابطة المهندســين السودانيين بدولة قطر<br>Sudanese Engineers Association - Qatar</h1>
 
-<h2 class="text-2xl font-bold mb-6 text-center">آخر الأخبار</h2>
+<h2 class="text-2xl font-bold mb-6 text-center">{{__('strings.recent_news')}}</h2>
 
 <!-- <div class="grid gap-6 md:grid-cols-3"> -->
 <div class="mutual-list space-y-6">
@@ -30,8 +30,8 @@
         <h3 class="text-lg text-justify font-semibold mb-2">{{ $lang == 'ar'? $post->title : $post->title_en }}</h3>
         <p class="text-gray-600 text-justify">&nbsp;&nbsp;&nbsp;{!! Str::limit($body, 250) !!}</p>
       </div>
-      <a href="{{ route('posts.show', $post) }}" class="text-left text-teal-700 hover:text-teal-800 cursor-pointer font-semibold">
-        اقرأ المزيد ←
+      <a href="{{ route('posts.show', $post) }}" class="{{$lang == 'ar'? 'text-left':'text-right'}} text-teal-700 hover:text-teal-800 cursor-pointer font-semibold">
+        {{__('strings.read_more')}}
       </a>
     </div>
   </div>

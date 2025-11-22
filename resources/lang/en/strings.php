@@ -21,7 +21,7 @@ return [
     // home
     'home_tab_title' => 'Home',
     'recent_news' => 'Recent News',
-    'read_more' => 'Read More ←',
+    'read_more' => 'Read More →',
     
     // events
     'events_tab_title' => 'Programs & Events',

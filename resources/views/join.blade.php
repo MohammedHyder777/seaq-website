@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'انضم للرابطة')
+@section('title', __('strings.join_tab_title'))
 
 @section('content')
-<h2 class="page-header">انضم إلى الرابطة</h2>
+<h2 class="page-header">{{__('strings.join_the_association')}}</h2>
 
 <div class="aspect-w-16 aspect-h-9">
   <iframe 

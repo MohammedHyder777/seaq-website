@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'من نحن؟')
+@section('title', __('strings.about_tab_title'))
 
 @section('content')
 <h2 class="page-header">{{__('strings.seaq_name')}}</h2>

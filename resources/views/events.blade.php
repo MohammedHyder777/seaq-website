@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'البرامج والفعاليات')
+@section('title', __('strings.events_tab_title'))
 
 @section('content')
 <div class="container mx-auto px-4 py-10">
-    <h2 class="page-header">البرامج والفعاليات</h2>
+    <h2 class="page-header">{{__('strings.programs&events')}}</h2>
 
     <div class="space-y-6">
         @foreach ($events as $event)
@@ -15,7 +15,7 @@
                 class="w-full h-full md:w-5/12 rounded-t-2xl md:rounded-se-none md:rounded-s-2xl object-cover">
 
             {{-- Event details --}}
-            <div class="flex flex-col justify-between p-5 flex-1 text-right">
+            <div class="flex flex-col justify-between p-5 flex-1 text-start">
 
                 <div>
                     <h2 class="text-2xl font-semibold text-gray-800 mb-3">{{ $lang == 'ar'? $event->title : $event->title_en }}</h2>
@@ -46,7 +46,7 @@
                         @if($event->location_url)
                         <a href="{{$event->location_url}}" target="_blank" class="flex flex-col items-center gap-1">
                             <i class="text-lg fa-duotone fa-solid fa-arrow-up-right-from-square"></i>
-                            <p class="text-sm bg-gray-300 px-1 rounded-xl">{{ $lang == 'ar' ? 'خرائط جوجل' : 'google map' }}</p>
+                            <p class="text-sm bg-gray-300 px-1 rounded-xl">{{ __('strings.google_map') }}</p>
                         </a>
                         @endif
                     </div>
