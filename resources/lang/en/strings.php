@@ -23,6 +23,22 @@ return [
     'recent_news' => 'Recent News',
     'read_more' => 'Read More →',
     
+    'our_vision' => 'Our Vision',
+    'vision_body' => 'A professional entity that looks toward the future, energizes potential, and invests distinguished scientific and applied engineering efforts to enhance the lives of individuals and communities.',
+
+    'our_mission' => 'Our Mission',
+    'mission_body' => 'A public-benefit professional association that aims to elevate professional competence, technical capabilities, and the scientific standing of engineers, technicians, and technologists in Sudan; and to strengthen their role in leading progress and building a better life through encouraging innovation, self-development, knowledge exchange, experience sharing, and adherence to professional ethics.',
+    
+    'objectives' => 'Our Objectives',
+    'objectives_body' => '<ol style="list-style:decimal;">
+        <li>Enhancing the competence of Sudanese engineers, technicians, and technologists residing in the State of Qatar.</li>
+        <li>Strengthening the positive public perception of the professional competence of Sudanese engineers, technicians, and technologists in Qatar.</li>
+        <li>Removing obstacles and reinforcing the status and continuity of the contribution of Sudanese engineers, technicians, and technologists in the labor market.</li>
+        <li>Preserving the rights and achievements of Sudanese engineers, technicians, and technologists.</li>
+        <li>Providing distinguished facilities and services to active members in accordance with the Association’s bylaws.</li>
+        <li>Strengthening and developing the bonds among members, and promoting communication and social interaction within the Association.</li>
+    </ol>',
+
     // events
     'events_tab_title' => 'Programs & Events',
     'google_map' => 'Google Maps',
