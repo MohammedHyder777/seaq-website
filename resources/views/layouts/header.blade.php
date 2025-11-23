@@ -5,7 +5,7 @@
     </a>
     <nav class="hidden md:flex relative space-x-1 ps-1 pe-7 bg-teal-500 backdrop-blur-sm border border-teal-600/90 shadow-lg text-slate-100 w-full">
         @if(auth()->user()?->is_admin)
-        <a class="py-3 px-3 text-xl font-medium {{ request()->routeIs('admin.*')? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('admin.dashboard') }}">{{__('strings.dashboard')}}</a>
+        <a class="py-3 px-3 text-xl font-medium {{ request()->routeIs('admin.dashboard')? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('admin.dashboard') }}">{{__('strings.dashboard')}}</a>
         @endif
         <a class="py-3 px-3 text-xl font-medium {{ Request::is('/')? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('home') }}">{{__('strings.home')}}</a>
         <a class="py-3 px-3 text-xl font-medium {{ Request::is('events')? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('events') }}">{{__('strings.programs&events')}}</a>
@@ -45,7 +45,7 @@
     <nav id="mobile-nav" class="absolute z-50 w-full flex flex-col justify-between space-y-7 me-10 pt-5 pb-4 px-4 bg-slate-300/90  border-b-4 border-teal-600 rounded-br-2xl rounded-bl-2xl md:hidden hidden">
         <div class="flex flex-col space-y-1">
             @if(auth()->user()?->is_admin)
-            <a class="text-lg font-medium ps-2 {{ Request::is('/') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('admin.dashboard') }}">{{__('strings.dashboard')}}</a>
+            <a class="text-lg font-medium ps-2 {{ Request::is('admin/dashboard') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('admin.dashboard') }}">{{__('strings.dashboard')}}</a>
             @endif
             <a class="text-lg font-medium ps-2 {{ Request::is('/') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('home') }}">{{__('strings.home')}}</a>
             <a class="text-lg font-medium ps-2 {{ Request::is('events') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('events') }}">{{__('strings.programs&events')}}</a>

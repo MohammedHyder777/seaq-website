@@ -1,11 +1,11 @@
-@extends('admin.layout')
+@extends('layouts.app')
 
 @section('content')
 <div class="p-1 md:p-6">
   <div class="flex flex-col md:flex-row items-center justify-between mb-6">
-    <h2 class="page-header">إدارة الفعاليات</h2>
+    <h2 class="page-header">{{__('strings.events_management')}}</h2>
     <a href="{{ route('admin.events.create') }}" class="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-md transition">
-      فعالية جديدة 📆
+      {{__('strings.new_event')}} 📆
     </a>
   </div>
 
@@ -20,35 +20,35 @@
     <table class="min-w-full text-sm text-center text-gray-700">
       <thead class="bg-teal-600 text-white">
         <tr>
-          <th class="py-3 px-4 font-semibold">المعرّف</th>
-          <th class="py-3 px-4 font-semibold">العنوان</th>
-          <th class="py-3 px-4 font-semibold">صورة الفعالية</th>
+          <th class="py-3 px-4 font-semibold">{{__('strings.id')}}</th>
+          <th class="py-3 px-4 font-semibold">{{__('strings.title')}}</th>
+          <th class="py-3 px-4 font-semibold">{{__('strings.event_image')}}</th>
           <!-- <th class="py-3 px-4 font-semibold">الوصف</th> -->
-          <th class="py-3 px-4 font-semibold">العرض</th>
-          <th class="py-3 px-4 font-semibold">الوقت والتاريخ</th>
-          <th class="py-3 px-4 font-semibold">آخر تعديل</th>
-          <th class="py-3 px-4 font-semibold">وقت الإنشاء</th>
-          <th class="py-3 px-4 font-semibold">إجراءات</th>
+          <th class="py-3 px-4 font-semibold">{{__('strings.display')}}</th>
+          <th class="py-3 px-4 font-semibold">{{__('strings.datetime')}}</th>
+          <th class="py-3 px-4 font-semibold">{{__('strings.updated_at')}}</th>
+          <th class="py-3 px-4 font-semibold">{{__('strings.created_at')}}</th>
+          <th class="py-3 px-4 font-semibold">{{__('strings.actions')}}</th>
         </tr>
       </thead>
       <tbody>
         @forelse($events as $event)
         <tr class="border-b hover:bg-gray-50 transition">
           <td class="py-3 px-4">{{ $event->id }}</td>
-          <td class="py-3 px-4 font-medium">{{ $event->title }}</td>
+          <td class="py-3 px-4 font-medium">{{ $lang == 'ar'? $event->title : $event->title_en }}</td>
           <td class="py-3 px-4">
             @if($event->image)
             <img src="{{ asset('storage/'.$event->image) }}" class="m-auto w-16 h-16 object-cover rounded-md border border-gray-200">
             @else
-            <span class="text-gray-400 italic">لا صورة</span>
+            <span class="text-gray-400 italic">{{__('strings.no_image')}}</span>
             @endif
           </td>
           <!-- <td class="py-3 px-4">{{ $event->desc }}</td> -->
           <td class="py-3 px-4">
             @if($event->is_shown)
-            <span class="text-green-600 font-semibold"><i class="fa fa-eye"></i> معروضة</span>
+            <span class="text-green-600 font-semibold"><i class="fa fa-eye"></i> {{__('strings.shown_f')}}</span>
             @else
-            <span class="text-gray-400 font-semibold"><i class="fa fa-eye-slash"></i> مخفاة</span>
+            <span class="text-gray-400 font-semibold"><i class="fa fa-eye-slash"></i> {{__('strings.hidden_f')}}</span>
             @endif
           </td>
           <td class="py-3 px-4">
@@ -61,13 +61,13 @@
             <div class="flex items-center justify-center gap-2">
               <a href="{{ route('admin.events.edit', $event) }}"
                 class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1.5 rounded-lg text-xs shadow-sm">
-                تعديل
+                {{__('strings.edit')}}
               </a>
-              <form action="{{ route('admin.events.destroy', $event) }}" method="event" onsubmit="return confirm('أترغب في حذف هذه الفعالية؟')">
+              <form action="{{ route('admin.events.destroy', $event) }}" method="event" onsubmit="return confirm(`{{__('strings.confirm_delete_event')}}`)">
                 @csrf @method('DELETE')
                 <button type="submit"
                   class="bg-red-500 hover:bg-red-600 text-white px-3 py-1.5 rounded-lg text-xs shadow-sm hover:cursor-pointer">
-                  حذف
+                  {{__('strings.delete')}}
                 </button>
               </form>
             </div>
@@ -76,7 +76,7 @@
         @empty
         <tr>
           <td colspan="7" class="py-6 text-center text-gray-500">
-            ما من فعالية لتُعرض.
+            {{__('strings.no_events')}}
           </td>
         </tr>
         @endforelse
