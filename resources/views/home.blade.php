@@ -19,9 +19,19 @@
     {{__('strings.mission_body')}}
   </div>
 
-  <div class="mb-6 p-7 text-justify w-5/6  bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">
+  <div class="flex flex-col gap-15 mb-6 p-7 text-justify transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">
     <h2 class="text-2xl font-bold text-teal-600 mb-6 text-center">{{__('strings.objectives')}} <i class="fa-solid fa-crosshairs"></i></h2>
-    <div class="ps-7 md:ps-20">{!! __('strings.objectives_body') !!}</div>
+    <!-- <div class="ps-7 md:ps-20">{!! __('strings.objectives_body') !!}</div> -->
+    <!-- From Uiverse.io by musashi-13 -->
+    <div class="text-center card-3d">
+      @foreach([6,5,4,3,2,1] as $i)
+      <div>
+        <h2 class="page-header">{{ $i }}</h2>
+        <p>{{__("strings.objective_$i")}}</p>
+      </div>
+      @endforeach
+    </div>
+
   </div>
 </div>
 
