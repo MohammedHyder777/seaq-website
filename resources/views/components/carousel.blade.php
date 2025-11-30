@@ -1,16 +1,16 @@
-<div class="relative m-auto rounded-2xl overflow-hidden group" id="carousel">
+<div class="relative m-auto md:rounded-2xl overflow-hidden group" id="carousel">
     <!-- Slides wrapper -->
     <div id="carousel-track" class="flex transition-transform duration-1000 ease-out">
 
         @foreach ($posts as $post)
-        <div class="w-full flex-shrink-0 p-2 md:p-4">
-            <div class="relative rounded-2xl overflow-hidden shadow-xl group h-72 md:h-96">
+        <div class="w-full flex-shrink-0 md:rounded-2xl">
+            <div class="relative md:rounded-2xl overflow-hidden shadow-xl group h-72 md:h-96">
                 <img src="{{ isset($post->image)? asset('storage/'.$post->image) : asset('images/logos/logo-w-text.png') }}"
                     class="w-full h-full object-cover group-hover:brightness-65 transition duration-300">
 
                 <!-- Title overlay -->
                 <a href="{{ route('posts.show', $post) }}" class="hover:cursor-pointer">
-                    <h3 class="absolute bottom-4 {{$lang == 'ar'? 'right':'left'}}-4 text-white text-xl md:text-2xl font-semibold drop-shadow-lg mh-carousel-img-title">
+                    <h3 class="absolute bottom-4 m-2 {{$lang == 'ar'? 'right':'left'}}-4 text-white text-xl md:text-2xl font-semibold drop-shadow-lg mh-carousel-img-title">
                         {{ $lang == 'ar'? $post->title : ($post->title_en ?? $post->title) }}
                     </h3>
                 </a>

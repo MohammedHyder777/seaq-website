@@ -9,7 +9,8 @@
 
 <div class="flex flex-col items-center">
 
-  <div class="mb-6 p-7 text-justify md:w-5/6">
+  <div class="mb-16 text-justify md:w-5/6 shadow-2xl max-md:max-w-[100vw] max-md:relative 
+            max-md:ml-[calc(-50vw+50%)] max-md:mr-[calc(-50vw+50%)] md:rounded-2xl">
     @include('components.carousel')
   </div>
 
