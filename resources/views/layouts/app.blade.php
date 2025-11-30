@@ -45,6 +45,8 @@
       cards.forEach(card => observer.observe(card));
     });
   </script>
+
+  @stack('scripts')
 </body>
 
 </html>

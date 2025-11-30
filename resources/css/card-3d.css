@@ -23,7 +23,7 @@
 .card-3d {
   position: relative;
   /* width: 400px; */
-  /* width: 100%; */
+  width: 380px;
   height: 300px;
   margin: 0 auto;
   transform-style: preserve-3d;
@@ -35,11 +35,12 @@
 .card-3d div {
   position: absolute;
   /* width: 80px; */
-  width: 185px;
-  height: 320px;
+  width: 175px;
+  height: 360px;
   background-color: rgb(252, 252, 252);
   border: solid 2px lightgray;
   border-radius: 0.5rem;
+  padding: 2px 7px;
   top: 50%;
   left: 50%;
   transform-origin: center center;
@@ -57,37 +58,37 @@
 }
 
 .card-3d div:nth-child(1) {
-  transform: translate(-50%, -50%) rotateY(0deg) translateZ(185px);
+  transform: translate(-50%, -50%) rotateY(0deg) translateZ(175px);
   animation-delay: -0s;
 }
 
 .card-3d div:nth-child(2) {
   /* transform: translate(-50%, -50%) rotateY(36deg) translateZ(150px); */ /*360/10 = 36deg*/
-  transform: translate(-50%, -50%) rotateY(60deg) translateZ(180px); /*360/6 = 60deg*/
+  transform: translate(-50%, -50%) rotateY(60deg) translateZ(170px); /*360/6 = 60deg*/
   animation-delay: -2s;
 }
 
 .card-3d div:nth-child(3) {
   /* transform: translate(-50%, -50%) rotateY(72deg) translateZ(150px); */
-  transform: translate(-50%, -50%) rotateY(120deg) translateZ(180px);
+  transform: translate(-50%, -50%) rotateY(120deg) translateZ(170px);
   animation-delay: -4s;
 }
 
 .card-3d div:nth-child(4) {
   /* transform: translate(-50%, -50%) rotateY(108deg) translateZ(150px); */
-  transform: translate(-50%, -50%) rotateY(180deg) translateZ(180px);
+  transform: translate(-50%, -50%) rotateY(180deg) translateZ(170px);
   animation-delay: -6s;
 }
 
 .card-3d div:nth-child(5) {
   /* transform: translate(-50%, -50%) rotateY(144deg) translateZ(150px); */
-  transform: translate(-50%, -50%) rotateY(240deg) translateZ(180px);
+  transform: translate(-50%, -50%) rotateY(240deg) translateZ(170px);
   animation-delay: -8s;
 }
 
 .card-3d div:nth-child(6) {
   /* transform: translate(-50%, -50%) rotateY(180deg) translateZ(150px); */
-  transform: translate(-50%, -50%) rotateY(300deg) translateZ(180px);
+  transform: translate(-50%, -50%) rotateY(300deg) translateZ(170px);
   animation-delay: -10s;
 }
 
