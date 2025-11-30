@@ -1,4 +1,4 @@
-<div class="relative m-auto rounded-2xl overflow-hidden group hover:cursor-pointer" id="carousel">
+<div class="relative m-auto rounded-2xl overflow-hidden group" id="carousel">
     <!-- Slides wrapper -->
     <div id="carousel-track" class="flex transition-transform duration-1000 ease-out">
 
@@ -9,9 +9,11 @@
                     class="w-full h-full object-cover group-hover:brightness-65 transition duration-300">
 
                 <!-- Title overlay -->
-                <h3 class="absolute bottom-4 {{$lang == 'ar'? 'right':'left'}}-4 text-white text-xl md:text-2xl font-semibold drop-shadow-lg">
-                    {{ $post->title }}
-                </h3>
+                <a href="{{ route('posts.show', $post) }}" class="hover:cursor-pointer">
+                    <h3 class="absolute bottom-4 {{$lang == 'ar'? 'right':'left'}}-4 text-white text-xl md:text-2xl font-semibold drop-shadow-lg mh-carousel-img-title">
+                        {{ $lang == 'ar'? $post->title : ($post->title_en ?? $post->title) }}
+                    </h3>
+                </a>
             </div>
         </div>
         @endforeach
@@ -21,7 +23,7 @@
     <!-- Right arrow -->
     <button id="{{$lang == 'ar'? 'carousel-prev':'carousel-next'}}"
         class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2
-                   bg-white/70 hover:bg-white text-gray-800 mx-3 p-3 rounded-full shadow-lg">
+                   bg-white/70 hover:bg-white text-gray-800 mx-3 p-3 rounded-full shadow-lg hover:cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
             fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -32,7 +34,7 @@
     <!-- Left arrow -->
     <button id="{{$lang == 'ar'? 'carousel-next':'carousel-prev'}}"
         class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2
-                   bg-white/70 hover:bg-white text-gray-800 mx-3 p-3 rounded-full shadow-lg">
+                   bg-white/70 hover:bg-white text-gray-800 mx-3 p-3 rounded-full shadow-lg hover:cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
             viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -66,7 +68,7 @@
         // Stop auto slide on hover
         document.getElementById("carousel").addEventListener("mouseenter", () => clearInterval(auto));
         document.getElementById("carousel").addEventListener("mouseleave", () => {
-        auto = setInterval(() => goToSlide(index + 1), 5000);
+            auto = setInterval(() => goToSlide(index + 1), 5000);
         });
 
 

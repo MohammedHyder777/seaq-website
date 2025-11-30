@@ -76,6 +76,15 @@ h2 {
     border-r-6 border-b-6 border-2 rounded-ss-lg rounded-se-full;
 }
 
+.mh-carousel-img-title {
+    color: #fff; /* النص بلون واحد (أبيض مثلاً) */
+    text-shadow:
+        0 0 4px rgba(0,0,0,0.7),   /* توهج غامق قريب للحرف */
+        0 0 8px rgba(0,0,0,0.6),   /* توهج أعمق */
+        0 0 12px rgba(255,255,255,0.8), /* توهج أبيض شفاف */
+        0 0 18px rgba(0,170,255,0.9);   /* توهج لوني (سماوي، يمكنك تغييره) */
+}
+
 
 /**************** MUTUAL LIST ****************/
 @media (min-width: 1027px) {
