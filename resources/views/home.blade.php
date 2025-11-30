@@ -5,7 +5,7 @@
 @section('content')
 
 
-<h1 class="md:hidden text-xl text-center page-header">رابطة المهندســين السودانيين بدولة قطر<br>Sudanese Engineers Association - Qatar</h1>
+<h2 class="md:hidden !text-xl text-center page-header">رابطة المهندســين السودانيين بدولة قطر<br>Sudanese Engineers Association - Qatar</h2>
 
 <div class="flex flex-col items-center">
 
@@ -66,7 +66,7 @@
                     <h3 class="text-lg text-justify font-semibold mb-2">{{ $lang == 'ar'? $post->title : $post->title_en }}</h3>
                     <p class="text-gray-600 text-justify">&nbsp;&nbsp;&nbsp;{!! Str::limit($body, 250) !!}</p>
                   </div>
-                  <a href="{{ route('posts.show', $post) }}" class="{{$lang == 'ar'? 'text-left':'text-right'}} text-teal-700 hover:text-teal-800 cursor-pointer font-semibold">
+                  <a href="{{ route('posts.show', $post) }}" class="{{$lang == 'ar'? 'text-left':'text-right'}} font-[Cairo] text-teal-700 hover:text-teal-800 cursor-pointer font-semibold">
                     {{__('strings.read_more')}}
                   </a>
                 </div>
