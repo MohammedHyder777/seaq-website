@@ -1,4 +1,4 @@
-<footer class="bg-amber-600/80">
+<footer class="bg-teal-800">
     <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div class="grid row-gap-10 mb-4 items-center lg:grid-cols-5">
             <div class="max-md:flex max-md:flex-col grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 xl:grid-cols-4">

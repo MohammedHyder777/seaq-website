@@ -10,10 +10,13 @@
 
                 <!-- Title overlay -->
                 <a href="{{ route('posts.show', $post) }}" class="hover:cursor-pointer">
-                    <h3 class="absolute bottom-4 m-2 {{$lang == 'ar'? 'right':'left'}}-4 text-white text-xl md:text-2xl font-semibold drop-shadow-lg mh-carousel-img-title">
+                    <div class="absolute bottom-4 m-2 {{$lang == 'ar'? 'right':'left'}}-4 text-white text-xl md:text-2xl font-semibold drop-shadow-lg mh-carousel-img-title">
                         {{ mb_substr($lang == 'ar'? $post->title : ($post->title_en ?? $post->title), 0, 21) . " ..." }}
-                    </h3>
+                    </div>
                 </a>
+
+                <!-- Pagination Dots -->
+                <div id="carousel-dots" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20"></div>
             </div>
         </div>
         @endforeach
@@ -43,6 +46,7 @@
     </button>
 </div>
 
+
 @push('scripts')
 <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -60,6 +64,8 @@
             @else
             track.style.transform = `translateX(-${index * 100}%)`; // slide LEFT for English
             @endif
+
+            updateDots();
         }
 
         // Auto-slide every 4 seconds
@@ -97,6 +103,32 @@
             if (endX - startX > 150) goToSlide(index - 1);
             @endif
         });
+
+        /***** Dots Functionality ****/
+        const dotsContainer = document.getElementById("carousel-dots");
+
+        // Create dots dynamically
+        for (let i = 0; i < slides; i++) {
+            const dot = document.createElement("div");
+            dot.className =
+                "w-3 h-3 rounded-full bg-white/60 backdrop-blur-sm border border-white shadow cursor-pointer transition-all duration-300";
+
+
+            dot.dataset.index = i; // store the slide number
+            dotsContainer.appendChild(dot);
+        }
+
+        const dots = dotsContainer.querySelectorAll("div");
+
+        function updateDots() {
+            dots.forEach((dot, i) => {
+                dot.className =
+                    "w-3 h-3 rounded-full cursor-pointer transition-all duration-300 " +
+                    (i === index ?
+                        "bg-teal-500 scale-125 border-teal-200 shadow-lg" :
+                        "bg-white/60 backdrop-blur-sm border-white shadow");
+            });
+        }
 
     });
 </script>
