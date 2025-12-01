@@ -11,7 +11,7 @@
                 <!-- Title overlay -->
                 <a href="{{ route('posts.show', $post) }}" class="hover:cursor-pointer">
                     <h3 class="absolute bottom-4 m-2 {{$lang == 'ar'? 'right':'left'}}-4 text-white text-xl md:text-2xl font-semibold drop-shadow-lg mh-carousel-img-title">
-                        {{ $lang == 'ar'? $post->title : ($post->title_en ?? $post->title) }}
+                        {{ mb_substr($lang == 'ar'? $post->title : ($post->title_en ?? $post->title), 0, 21) . " ..." }}
                     </h3>
                 </a>
             </div>
@@ -22,8 +22,8 @@
 
     <!-- Right arrow -->
     <button id="{{$lang == 'ar'? 'carousel-prev':'carousel-next'}}"
-        class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2
-                   bg-white/70 hover:bg-white text-gray-800 mx-3 p-3 rounded-full shadow-lg hover:cursor-pointer">
+        class="flex absolute right-4 top-1/2 -translate-y-1/2
+                   bg-white/70 hover:bg-white text-gray-800 mx-3 p-1 md:p-3 rounded-full shadow-lg hover:cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
             fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -33,8 +33,8 @@
 
     <!-- Left arrow -->
     <button id="{{$lang == 'ar'? 'carousel-next':'carousel-prev'}}"
-        class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2
-                   bg-white/70 hover:bg-white text-gray-800 mx-3 p-3 rounded-full shadow-lg hover:cursor-pointer">
+        class="flex absolute left-4 top-1/2 -translate-y-1/2
+                   bg-white/70 hover:bg-white text-gray-800 mx-3 p-1 md:p-3 rounded-full shadow-lg hover:cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
             viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -63,12 +63,12 @@
         }
 
         // Auto-slide every 4 seconds
-        let auto = setInterval(() => goToSlide(index + 1), 5000);
+        let auto = setInterval(() => goToSlide(index + 1), 6000);
 
         // Stop auto slide on hover
         document.getElementById("carousel").addEventListener("mouseenter", () => clearInterval(auto));
         document.getElementById("carousel").addEventListener("mouseleave", () => {
-            auto = setInterval(() => goToSlide(index + 1), 5000);
+            auto = setInterval(() => goToSlide(index + 1), 6000);
         });
 
 
@@ -90,11 +90,11 @@
             let endX = e.changedTouches[0].clientX;
 
             @if($lang == 'ar')
-            if (startX - endX > 50) goToSlide(index - 1); // swipe left → previous (RTL)
-            if (endX - startX > 50) goToSlide(index + 1); // swipe right → next (RTL)
+            if (startX - endX > 150) goToSlide(index - 1); // swipe left → previous (RTL)
+            if (endX - startX > 150) goToSlide(index + 1); // swipe right → next (RTL)
             @else
-            if (startX - endX > 50) goToSlide(index + 1); // normal LTR
-            if (endX - startX > 50) goToSlide(index - 1);
+            if (startX - endX > 150) goToSlide(index + 1); // normal LTR
+            if (endX - startX > 150) goToSlide(index - 1);
             @endif
         });
 
