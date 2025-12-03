@@ -11,7 +11,7 @@
 
   <!-- <div class="mb-16 text-justify md:w-5/6 shadow-2xl max-md:max-w-[100vw] max-md:relative 
             max-md:ml-[calc(-50vw+50%)] max-md:mr-[calc(-50vw+50%)] md:rounded-2xl"> -->
-  <div class="mb-16 text-justify w-full md:w-5/6 shadow-2xl">
+  <div class="mb-16 text-justify w-screen max-sm:-px-4 md:w-5/6 md:rounded-2xl shadow-2xl">
     @include('components.carousel', ['posts' => $posts])
   </div>
 
@@ -78,17 +78,16 @@
   <div class="md:flex bg-white md:h-100 mutual-list-card rounded-xl shadow-md overflow-hidden hover:shadow-xl transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">
     {{-- Image --}}
     <img src="{{ isset($post->image)? asset('storage/'.$post->image) : asset('images/logos/logo-w-text.png') }}"
-      class="w-full h-full md:w-1/2 md:h-full object-cover" alt="خبر">
+      class="w-full h-full md:w-1/2 md:h-1/2 object-cover" alt="خبر">
 
     @php
     $body = $lang == 'ar' ? $post->body : $post->body_en;
     // Remove all images
     $body = preg_replace('/<img[^>]*>/', '', $body);
-      // Optional: allow some tags
-      $body = strip_tags($body, '<p><br><strong><em>
-            <ul>
-              <li>');
-                @endphp
+    $body = strip_tags($body);
+    // Optional: allow some tags
+    // $body = strip_tags($body, '<p><br><strong><em><ul><li>');
+    @endphp
                 {{-- Text --}}
                 <div class="flex flex-col justify-between p-7 pb-15 w-full md:w-1/2">
                   <div class="flex flex-col">
@@ -146,13 +145,13 @@
     opacity: 1;
   }
 
-  .splide__slide {
+  #objectivesSplide > div > div > .splide__slide {
     opacity: 0.5;
     /* transform: scale(0.85); */
     transition: all .3s ease;
   }
 
-  .splide__slide.is-active {
+  #objectivesSplide > div > div > .splide__slide.is-active {
     opacity: 1;
     /* scale: 1.05; */
     transform: scale(1.02);

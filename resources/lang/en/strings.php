@@ -24,10 +24,10 @@ return [
     'read_more' => 'Read More →',
 
     'our_vision' => 'Our Vision',
-    'vision_body' => 'A professional entity that looks toward the future, energizes potential, and invests distinguished scientific and applied engineering efforts to enhance the lives of individuals and communities.',
+    'vision_body' => 'To support and empower Sudanese engineers residing in Qatar to become the most distinguished professionals in their field — globally recognized for excellence, innovation, and integrity. SEAQ strives to foster growth, efficiency, and professional leadership by investing in human capital, promoting sustainable engineering practices, and driving technological and socio-economic advancement within both the Qatari and Sudanese communities.',
 
     'our_mission' => 'Our Mission',
-    'mission_body' => 'A public-benefit professional association that aims to elevate professional competence, technical capabilities, and the scientific standing of engineers, technicians, and technologists in Sudan; and to strengthen their role in leading progress and building a better life through encouraging innovation, self-development, knowledge exchange, experience sharing, and adherence to professional ethics.',
+    'mission_body' => 'To provide comprehensive support to Sudanese engineers residing in Qatar through well-planned volunteer initiatives that strengthen communication and collaboration among members while fostering a stimulating environment for professional, academic, and social development. <br>We also strive to be an active part of both the local and international community, contributing to the creation of a better and more sustainable world.',
 
     'objectives' => 'Our Objectives',
     'objectives_body' => '<ol style="list-style:decimal;">
