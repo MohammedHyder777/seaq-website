@@ -112,12 +112,3 @@ h2 {
 input[type=checkbox] {
     @apply cursor-pointer;
 }
-
-
-ol > li {
-    @apply my-5;
-}
-ol > li::marker {
-    @apply text-teal-600 font-bold text-2xl;
-    content: counter(list-item) " )  ";
-}

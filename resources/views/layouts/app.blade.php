@@ -5,9 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-------------------------- FONTS -------------------------->
   <!-- <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet"> -->
-   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
+
+  <!-------------------------- Swiper for carousels -------------------------->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css" />
+
 
   <title>@yield('title', 'رابطة المهندسين')</title>
 
@@ -19,7 +24,7 @@
 
   @include('layouts.header')
 
-  <main class="flex-grow container mx-auto px-4 py-8">
+  <main class="flex-grow container mx-auto px-4 py-8 overflow-x-hidden">
     @yield('content')
   </main>
 

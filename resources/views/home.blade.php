@@ -9,9 +9,10 @@
 
 <div class="flex flex-col items-center">
 
-  <div class="mb-16 text-justify md:w-5/6 shadow-2xl max-md:max-w-[100vw] max-md:relative 
-            max-md:ml-[calc(-50vw+50%)] max-md:mr-[calc(-50vw+50%)] md:rounded-2xl">
-    @include('components.carousel')
+  <!-- <div class="mb-16 text-justify md:w-5/6 shadow-2xl max-md:max-w-[100vw] max-md:relative 
+            max-md:ml-[calc(-50vw+50%)] max-md:mr-[calc(-50vw+50%)] md:rounded-2xl"> -->
+  <div class="mb-16 text-justify w-full md:w-5/6 shadow-2xl">
+    @include('components.carousel', ['posts' => $posts])
   </div>
 
   <div class="mb-6 p-7 text-justify w-5/6 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">
@@ -24,20 +25,48 @@
     {{__('strings.mission_body')}}
   </div>
 
-  <div class="flex flex-col gap-15 mx-5 mb-10 p-7 text-justify transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">
-    <h2 class="text-2xl font-bold text-teal-600 mb-16 text-center">{{__('strings.objectives')}} <i class="fa-solid fa-crosshairs"></i></h2>
-    <!-- <div class="ps-7 md:ps-20">{!! __('strings.objectives_body') !!}</div> -->
-    <!-- From Uiverse.io by musashi-13 -->
-    <div class="text-center !text-md card-3d">
-      @foreach([6,5,4,3,2,1] as $i)
-      <div>
-        <h2 class="page-header">{{ $i }}</h2>
-        <p>{{__("strings.objective_$i")}}</p>
-      </div>
-      @endforeach
-    </div>
 
+  <div class="flex flex-col items-center justify-center w-5/6 gap-8 m-5 mb-10 transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">
+    <h2 class="text-2xl font-bold text-teal-600 text-center">
+      {{__('strings.objectives')}} <i class="fa-solid fa-crosshairs"></i>
+    </h2>
+
+    <!-- Splide -->
+    <div id="objectivesSplide" class="splide w-[86%] md:w-[60%]">
+      <div class="splide__track !overflow-visible rounded-xl">
+        <div class="splide__list">
+          @foreach([1,2,3,4,5,6] as $i)
+          <div class="splide__slide flex justify-center mb-6 p-10 text-justify  bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl">
+            <div class="text-center">
+              <h2 class="page-header !text-4xl mb-10">{{ $i }}</h2>
+              <p>{{ __("strings.objective_$i") }}</p>
+            </div>
+          </div>
+          @endforeach
+        </div>
+      </div>
+
+      <!-- Arrows -->
+      <div class="splide__arrows">
+        <button class="splide__arrow splide__arrow--prev -mx-4" aria-label="Previous">
+          <i class="fa-solid fa-chevron-{{ $lang == 'ar'? 'right':'left' }} text-teal-700 text-md"></i>
+        </button>
+        <button class="splide__arrow splide__arrow--next -mx-4" aria-label="Next">
+          <i class="fa-solid fa-chevron-{{ $lang == 'ar'? 'left':'right' }} text-teal-700 text-md"></i>
+        </button>
+      </div>
+
+      <!-- Pagination (optional) -->
+      <div class="splide__pagination mt-4"></div>
+    </div>
   </div>
+</div>
+
+
+</div>
+
+
+
 </div>
 
 <hr class="w-3/5 my-10 mx-auto">
@@ -49,7 +78,7 @@
   <div class="md:flex bg-white md:h-100 mutual-list-card rounded-xl shadow-md overflow-hidden hover:shadow-xl transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">
     {{-- Image --}}
     <img src="{{ isset($post->image)? asset('storage/'.$post->image) : asset('images/logos/logo-w-text.png') }}"
-      class="w-full h-auto md:w-1/2 md:h-full object-cover" alt="خبر">
+      class="w-full h-full md:w-1/2 md:h-full object-cover" alt="خبر">
 
     @php
     $body = $lang == 'ar' ? $post->body : $post->body_en;
@@ -64,7 +93,7 @@
                 <div class="flex flex-col justify-between p-7 pb-15 w-full md:w-1/2">
                   <div class="flex flex-col">
                     <h3 class="text-lg text-justify font-semibold mb-2">{{ $lang == 'ar'? $post->title : $post->title_en }}</h3>
-                    <p class="text-gray-600 text-justify">&nbsp;&nbsp;&nbsp;{!! Str::limit($body, 250) !!}</p>
+                    <p class="text-gray-600 text-justify">&nbsp;&nbsp;&nbsp;{!! Str::limit($body, 75) !!}</p>
                   </div>
                   <a href="{{ route('posts.show', $post) }}" class="{{$lang == 'ar'? 'text-left':'text-right'}} font-[Cairo] text-teal-700 hover:text-teal-800 cursor-pointer font-semibold">
                     {{__('strings.read_more')}}
@@ -74,3 +103,62 @@
   @endforeach
 </div>
 @endsection
+
+@push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    new Splide('#objectivesSplide', {
+      type: 'loop',
+      perPage: 1,
+      focus: 'center',
+      gap: '1.3rem',
+      // padding: {left: '2%', right: '2%'},
+      drag: true,
+      keyboard: 'global',
+      arrows: true,
+      pagination: true,
+      // snap: true,
+      // breakpoints: {
+      //   768: {
+      //     padding: {left: '6%', right: '6%'},
+      //     gap: '1rem',
+      //   },
+      //   1024: {
+      //     padding: {left: '12%', right: '12%'},
+      //   }
+      // },
+
+      direction: '<?php echo $lang == "ar" ? "rtl" : "ltr" ?>',
+    }).mount();
+  });
+</script>
+
+<style>
+  .splide__pagination__page {
+    background: #cbd5e1; /* slate-300 */
+    opacity: .8;
+  }
+
+  .splide__pagination__page.is-active {
+    background: #0d9488 !important;
+    opacity: 1;
+  }
+
+  .splide__slide {
+    opacity: 0.5;
+    /* transform: scale(0.85); */
+    transition: all .3s ease;
+  }
+
+  .splide__slide.is-active {
+    opacity: 1;
+    /* scale: 1.05; */
+    transform: scale(1.02);
+  }
+</style>
+
+
+
+@endpush

@@ -11,13 +11,12 @@
                             </a>
                         </li>
                         <!-- Social Media for medium and wider screens -->
-                        <li class="hidden md:flex flex-row justify-start gap-4 text-gray-600">
-                            <a href="https://qa.linkedin.com/company/sudanese-engineers-association-qatar?trk=public_post_feed-actor-name" target="_blank"><i class="fa-brands fa-linkedin text-2xl"></i></a>
-                            <a href="https://www.instagram.com/sudaneseengq" target="_blank"><i class="fa-brands fa-instagram text-2xl"></i></a>
-                            <a href="https://whatsapp.com/channel/0029VaUIQwAKbYMUc9CbuJ47" target="_blank"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
-                            <a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook text-2xl"></i></a>
-                            <a href="https://x.com/SudaneseEng" target="_blank"><i class="fa-brands fa-x-twitter text-2xl"></i></a>
-
+                        <li class="hidden md:flex flex-row ms-5 justify-center gap-4 text-teal-600">
+                            <a class="flex items-center rounded-full p-2 bg-slate-100 shadow-sm shadow-green-300 transition duration-300 transform hover:-translate-y-1 hover:scale-110 hover:shadow-md" href="https://qa.linkedin.com/company/sudanese-engineers-association-qatar?trk=public_post_feed-actor-name" target="_blank"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                            <a class="flex items-center rounded-full p-2 bg-slate-100 shadow-sm shadow-green-300 transition duration-300 transform hover:-translate-y-1 hover:scale-110 hover:shadow-md" href="https://www.instagram.com/sudaneseengq" target="_blank"><i class="fa-brands fa-instagram text-xl"></i></a>
+                            <a class="flex items-center rounded-full p-2 bg-slate-100 shadow-sm shadow-green-300 transition duration-300 transform hover:-translate-y-1 hover:scale-110 hover:shadow-md" href="https://whatsapp.com/channel/0029VaUIQwAKbYMUc9CbuJ47" target="_blank"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+                            <a class="flex items-center rounded-full p-2 bg-slate-100 shadow-sm shadow-green-300 transition duration-300 transform hover:-translate-y-1 hover:scale-110 hover:shadow-md" href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook text-xl"></i></a>
+                            <a class="flex items-center rounded-full p-2 bg-slate-100 shadow-sm shadow-green-300 transition duration-300 transform hover:-translate-y-1 hover:scale-110 hover:shadow-md" href="https://x.com/SudaneseEng" target="_blank"><i class="fa-brands fa-x-twitter text-xl"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -40,18 +39,18 @@
             <div class="flex flex-col items-center mt-4">
                 <img src="{{ asset('images/logos/logo-reflection.png') }}" height="150" width="150" alt="شعار">
                 <!-- Social Media for mobile screens -->
-                <li class="md:hidden flex flex-row justify-center gap-4 text-gray-600">
-                    <a href="https://qa.linkedin.com/company/sudanese-engineers-association-qatar?trk=public_post_feed-actor-name" target="_blank"><i class="fa-brands fa-linkedin text-2xl"></i></a>
-                    <a href="https://www.instagram.com/sudaneseengq" target="_blank"><i class="fa-brands fa-instagram text-2xl"></i></a>
-                    <a href="https://whatsapp.com/channel/0029VaUIQwAKbYMUc9CbuJ47" target="_blank"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
-                    <a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook text-2xl"></i></a>
-                    <a href="https://x.com/SudaneseEng" target="_blank"><i class="fa-brands fa-x-twitter text-2xl"></i></a>
+                <li class="md:hidden flex flex-row justify-center gap-4 mt-2 text-teal-600">
+                    <a class="flex items-center rounded-full p-2 bg-slate-100 shadow-sm shadow-green-300 transition duration-300 transform hover:-translate-y-1 hover:scale-110 hover:shadow-md" href="https://qa.linkedin.com/company/sudanese-engineers-association-qatar?trk=public_post_feed-actor-name" target="_blank"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                    <a class="flex items-center rounded-full p-2 bg-slate-100 shadow-sm shadow-green-300 transition duration-300 transform hover:-translate-y-1 hover:scale-110 hover:shadow-md" href="https://www.instagram.com/sudaneseengq" target="_blank"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a class="flex items-center rounded-full p-2 bg-slate-100 shadow-sm shadow-green-300 transition duration-300 transform hover:-translate-y-1 hover:scale-110 hover:shadow-md" href="https://whatsapp.com/channel/0029VaUIQwAKbYMUc9CbuJ47" target="_blank"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+                    <a class="flex items-center rounded-full p-2 bg-slate-100 shadow-sm shadow-green-300 transition duration-300 transform hover:-translate-y-1 hover:scale-110 hover:shadow-md" href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook text-xl"></i></a>
+                    <a class="flex items-center rounded-full p-2 bg-slate-100 shadow-sm shadow-green-300 transition duration-300 transform hover:-translate-y-1 hover:scale-110 hover:shadow-md" href="https://x.com/SudaneseEng" target="_blank"><i class="fa-brands fa-x-twitter text-xl"></i></a>
                 </li>
             </div>
-        </div>
+        </div> 
 
         <div class="flex flex-col justify-between items-center pt-5 pb-10 border-t border-gray-800 sm:flex-row">
-            <div class="flex items-center gap-4 order-last me-12 mt-4 space-x-4 text-xs sm:mt-0">
+            <div class="flex items-center gap-4 order-last me-12 mt-4 space-x-4 text-xs text-slate-300 sm:mt-0">
                 {{__('strings.developed_by')}}
                 <div>
                     <a href="mailto:mohammedhyder1417@gmail.com" class="flex flex-col text-center items-center border-2 rounded-2xl pb-3">
