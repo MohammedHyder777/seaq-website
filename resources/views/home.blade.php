@@ -63,41 +63,36 @@
 </div>
 
 
-</div>
-
-
-
-</div>
 
 <hr class="w-3/5 my-10 mx-auto">
 <h2 class="text-2xl font-bold mb-6 text-center">{{__('strings.recent_news')}}</h2>
 
-<!-- <div class="grid gap-6 md:grid-cols-3"> -->
 <div class="mutual-list space-y-6">
   @foreach ($posts as $post)
-  <div class="md:flex bg-white md:h-100 mutual-list-card rounded-xl shadow-md overflow-hidden hover:shadow-xl transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">
+  <div class="flex flex-row bg-white h-40 md:h-100 mutual-list-card rounded-xl shadow-md overflow-hidden hover:shadow-xl max-sm:hover:cursor-pointer transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">
     {{-- Image --}}
+    <!-- <div class=""> -->
     <img src="{{ isset($post->image)? asset('storage/'.$post->image) : asset('images/logos/logo-w-text.png') }}"
-      class="w-full h-full md:w-1/2 md:h-1/2 object-cover" alt="خبر">
+      class="w-1/2 h-full object-fill" alt="خبر">
+    <!-- </div> -->
 
     @php
     $body = $lang == 'ar' ? $post->body : $post->body_en;
     // Remove all images
     $body = preg_replace('/<img[^>]*>/', '', $body);
-    $body = strip_tags($body);
-    // Optional: allow some tags
-    // $body = strip_tags($body, '<p><br><strong><em><ul><li>');
-    @endphp
-                {{-- Text --}}
-                <div class="flex flex-col justify-between p-7 pb-15 w-full md:w-1/2">
-                  <div class="flex flex-col">
-                    <h3 class="text-lg text-justify font-semibold mb-2">{{ $lang == 'ar'? $post->title : $post->title_en }}</h3>
-                    <p class="text-gray-600 text-justify">&nbsp;&nbsp;&nbsp;{!! Str::limit($body, 75) !!}</p>
-                  </div>
-                  <a href="{{ route('posts.show', $post) }}" class="{{$lang == 'ar'? 'text-left':'text-right'}} font-[Cairo] text-teal-700 hover:text-teal-800 cursor-pointer font-semibold">
-                    {{__('strings.read_more')}}
-                  </a>
-                </div>
+      $body = strip_tags($body);
+
+      @endphp
+      {{-- Text --}}
+      <div class="flex flex-col justify-between p-7 pb-15 w-full md:w-1/2">
+        <div class="flex flex-col">
+          <h3 class="text-lg text-justify font-semibold mb-2">{{ $lang == 'ar'? $post->title : $post->title_en }}</h3>
+          <p class="max-sm:hidden text-gray-600 text-justify">&nbsp;&nbsp;&nbsp;{!! Str::limit($body, 175) !!}</p>
+        </div>
+        <a href="{{ route('posts.show', $post) }}" class="max-sm:hidden {{$lang == 'ar'? 'text-left':'text-right'}} font-[Cairo] text-teal-700 hover:text-teal-800 cursor-pointer font-semibold">
+          {{__('strings.read_more')}}
+        </a>
+      </div>
   </div>
   @endforeach
 </div>
@@ -136,7 +131,8 @@
 
 <style>
   .splide__pagination__page {
-    background: #cbd5e1; /* slate-300 */
+    background: #cbd5e1;
+    /* slate-300 */
     opacity: .8;
   }
 
@@ -145,19 +141,31 @@
     opacity: 1;
   }
 
-  #objectivesSplide > div > div > .splide__slide {
+  #objectivesSplide>div>div>.splide__slide {
     opacity: 0.5;
     /* transform: scale(0.85); */
     transition: all .3s ease;
   }
 
-  #objectivesSplide > div > div > .splide__slide.is-active {
+  #objectivesSplide>div>div>.splide__slide.is-active {
     opacity: 1;
     /* scale: 1.05; */
     transform: scale(1.02);
   }
 </style>
 
-
+<!-- MAKE THE POSTS CARDS CLICKABLE IN SMALL SCREENS -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (window.innerWidth < 768) { // Tailwind md breakpoint
+      document.querySelectorAll('.mutual-list-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const url = card.querySelector('a').href;
+          window.location.href = url;
+        });
+      });
+    }
+  });
+</script>
 
 @endpush
