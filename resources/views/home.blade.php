@@ -86,7 +86,7 @@
       {{-- Text --}}
       <div class="flex flex-col justify-between p-7 pb-15 w-full md:w-1/2">
         <div class="flex flex-col">
-          <h3 class="text-lg text-justify font-semibold mb-2">{{ $lang == 'ar'? $post->title : $post->title_en }}</h3>
+          <h3 class="line-clamp-4 text-md md:text-lg text-justify md:font-semibold mb-2">{{ $lang == 'ar'? $post->title : $post->title_en }}</h3>
           <p class="max-sm:hidden text-gray-600 text-justify">&nbsp;&nbsp;&nbsp;{!! Str::limit($body, 175) !!}</p>
         </div>
         <a href="{{ route('posts.show', $post) }}" class="max-sm:hidden {{$lang == 'ar'? 'text-left':'text-right'}} font-[Cairo] text-teal-700 hover:text-teal-800 cursor-pointer font-semibold">
