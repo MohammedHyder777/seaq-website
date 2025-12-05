@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import '@fortawesome/fontawesome-free/css/all.min.css';
 @import './card-3d.css';
+@import './fancy-btn.css';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -111,4 +112,8 @@ h2 {
 /* Forms, Inputs and Buttons */
 input[type=checkbox] {
     @apply cursor-pointer;
+}
+
+button {
+    @apply rounded-xl;
 }

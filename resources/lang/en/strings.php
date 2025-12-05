@@ -59,6 +59,8 @@ return [
     // join
     'join_tab_title' => 'Join the Association',
     'join_the_association' => 'Join the Association',
+    'fill_membership_form' => 'Fill Membership Form',
+    'join_body' => 'Be a member of SEAQ.',
 
     // about
     'about_tab_title' => 'About Us',

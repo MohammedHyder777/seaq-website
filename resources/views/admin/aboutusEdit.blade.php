@@ -32,11 +32,11 @@
 
       <!-- Buttons -->
       <div class="flex items-center gap-3">
-        <button class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-lg font-medium shadow-sm transition hover:cursor-pointer">
+        <button class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 font-medium shadow-sm transition hover:cursor-pointer">
           💾 {{__('strings.save')}}
         </button>
         <a href="{{ route('admin.dashboard') }}"
-          class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded-lg font-medium transition">
+          class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded-xl font-medium transition">
           {{__('strings.cancel')}}
         </a>
       </div>

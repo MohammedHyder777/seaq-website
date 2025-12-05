@@ -60,6 +60,8 @@ return [
     // join
     'join_tab_title' => 'انضم للرابطة',
     'join_the_association' => 'انضم إلى الرابطة',
+    'fill_membership_form' => 'ملء نموذج العضوية',
+    'join_body' => 'كن عضوا في رابطةالمهندسين السودانيين بقطر SEAQ',
 
     // about
     'about_tab_title' => 'من نحن؟',

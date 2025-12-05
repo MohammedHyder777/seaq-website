@@ -12,6 +12,8 @@
         <a class="py-3 px-3 text-xl font-medium {{ Request::is('join') ? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('join') }}">{{__('strings.join_us')}}</a>
         <a class="py-3 px-3 text-xl font-medium {{ Request::is('about') ? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('about') }}">{{__('strings.about')}}</a>
 
+        <!-- DROPDOWN MENU -->
+
         <div class="ms-auto flex items-center m-1 rounded-4xl bg-white text-teal-600">
             @if(app()->getLocale() == "ar")
             <a href="{{ route('lang.switch', 'en') }}" class="px-3 py-3 text-sm">
@@ -77,22 +79,6 @@
                 mobileNav.classList.add('hidden');
             }
         });
-
-        /*
-        // ✅ Close when clicking the backdrop area
-        mobileNav.addEventListener('click', (event) => {
-            const rect = mobileNav.getBoundingClientRect();
-            console.log(rect)
-            const isInDialog =
-                event.clientX >= rect.left &&
-                event.clientX <= rect.right &&
-                event.clientY >= rect.top &&
-                event.clientY <= rect.bottom;
-
-            if (!isInDialog) {
-                mobileNav.classList.add("hidden");
-            }
-        });*/
     </script>
 
 </header>
