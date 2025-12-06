@@ -7,6 +7,9 @@ return [
     'programs&events' => 'Programs & Events',
     'about' => 'About Us',
     'join_us' => 'Join Us',
+    'newsletter' => 'Our News Letter',
+    'profile' => 'Our Profile',
+    
     // layouts.app
     'tab_title' => 'Engineers Association',
 
@@ -64,6 +67,11 @@ return [
 
     // about
     'about_tab_title' => 'About Us',
+
+    // newsletter and profile
+    'newsletter_seaq' => 'The SEAQ Newsletter',
+    'profile_seaq' => 'The SEAQ Profile',
+    'download_pdf' => 'Download pdf',
 
     // ------------------------------------------
     // admin:

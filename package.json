@@ -19,6 +19,7 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "^7.1.0",
         "alpinejs": "^3.15.1",
+        "mdb-ui-kit": "^9.2.0",
         "tw-elements": "^2.0.0"
     }
 }

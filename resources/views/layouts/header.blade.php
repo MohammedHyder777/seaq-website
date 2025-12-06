@@ -3,16 +3,41 @@
     <a class="hidden md:block my-4 mr-4 p-2 mh-logo-border" href="{{ url('/') }}">
         <img src="{{ asset('images/logos/logo-w-text.png') }}" height="110" width="177" alt="الشعار">
     </a>
-    <nav class="hidden md:flex relative space-x-1 ps-1 pe-7 bg-teal-500 backdrop-blur-sm border border-teal-600/90 shadow-lg text-slate-100 w-full">
+    <nav class="hidden md:flex relative space-x-1 ps-1 pe-7 bg-teal-500 backdrop-blur-sm border border-teal-600/90 shadow-lg text-slate-100 w-full z-[9999]">
         @if(auth()->user()?->is_admin)
         <a class="py-3 px-3 text-xl font-medium {{ request()->routeIs('admin.dashboard')? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('admin.dashboard') }}">{{__('strings.dashboard')}}</a>
         @endif
         <a class="py-3 px-3 text-xl font-medium {{ Request::is('/')? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('home') }}">{{__('strings.home')}}</a>
         <a class="py-3 px-3 text-xl font-medium {{ Request::is('events')? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('events') }}">{{__('strings.programs&events')}}</a>
         <a class="py-3 px-3 text-xl font-medium {{ Request::is('join') ? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('join') }}">{{__('strings.join_us')}}</a>
-        <a class="py-3 px-3 text-xl font-medium {{ Request::is('about') ? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('about') }}">{{__('strings.about')}}</a>
+        <!-- <a class="py-3 px-3 text-xl font-medium {{ Request::is('about') ? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('about') }}">{{__('strings.about')}}</a> -->
+        
+        <!-- Dropdown wrapper -->
+        
+        <div class="relative" data-dropdown>
+            <!-- Toggle button -->
+            <button
+                type="button"
+                class="flex items-center gap-2 py-3 px-3 text-xl transition"
+                data-dropdown-button
+                aria-expanded="false">
+                {{__('strings.about')}}
+                <svg class="w-4 h-4 transition-transform" data-dropdown-caret xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
 
-        <!-- DROPDOWN MENU -->
+            <!-- Menu -->
+            <div
+                class="absolute left-0 w-max bg-slate-100 pt-3 pb-7 rounded-lg shadow-lg ring-1 ring-teal-700/60 hidden" style="z-index: -1;"
+                data-dropdown-menu
+                role="menu"
+                aria-hidden="true">
+                <a class="block px-4 py-2 text-lg font-medium {{ Request::is('about') ? 'text-slate-100 bg-teal-500' : 'text-teal-600 bg-slate-100 hover:text-slate-100 hover:bg-teal-500' }}" href="{{ route('about') }}">{{__('strings.about')}}</a>
+                <a class="block px-4 py-2 text-lg font-medium {{ Request::is('newsletter') ? 'text-slate-100 bg-teal-500' : 'text-teal-600 bg-slate-100 hover:text-slate-100 hover:bg-teal-500' }}" role="menuitem" href="{{ route('newsletter') }}">{{__('strings.newsletter')}}</a>
+                <a class="block px-4 py-2 text-lg font-medium {{ Request::is('profile') ? 'text-slate-100 bg-teal-500' : 'text-teal-600 bg-slate-100 hover:text-slate-100 hover:bg-teal-500' }}" role="menuitem" href="{{ route('profile') }}">{{__('strings.profile')}}</a>
+            </div>
+        </div>
 
         <div class="ms-auto flex items-center m-1 rounded-4xl bg-white text-teal-600">
             @if(app()->getLocale() == "ar")
@@ -53,6 +78,8 @@
             <a class="text-lg font-medium ps-2 {{ Request::is('events') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('events') }}">{{__('strings.programs&events')}}</a>
             <a class="text-lg font-medium ps-2 {{ Request::is('join') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('join') }}">{{__('strings.join_us')}}</a>
             <a class="text-lg font-medium ps-2 {{ Request::is('about') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('about') }}">{{__('strings.about')}}</a>
+            <a class="text-lg font-medium ps-2 {{ Request::is('newsletter') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('newsletter') }}">{{__('strings.newsletter')}}</a>
+            <a class="text-lg font-medium ps-2 {{ Request::is('profile') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('profile') }}">{{__('strings.profile')}}</a>
         </div>
         <div class="items-center m-1 py-1 px-2 rounded-2xl bg-white w-fit">
             @if(app()->getLocale() != 'ar')
@@ -63,8 +90,8 @@
         </div>
     </nav>
 
+    <!-- To close the mobile menu when the user clicks outside -->
     <script>
-        // To close the mobile menu when the user clicks outside
         const mobileNav = document.getElementById('mobile-nav');
         const toggle = document.getElementById('toggle-btn');
 
@@ -80,5 +107,81 @@
             }
         });
     </script>
+
+    <!-- Dropdon Menu Functions -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const DROPDOWNS = document.querySelectorAll('[data-dropdown]');
+
+            // helper: is desktop (Tailwind md breakpoint = 768px)
+            const isDesktop = () => window.matchMedia('(min-width: 768px)').matches;
+
+            // Close all menus
+            function closeAll() {
+                DROPDOWNS.forEach(wrapper => {
+                    const btn = wrapper.querySelector('[data-dropdown-button]');
+                    const menu = wrapper.querySelector('[data-dropdown-menu]');
+                    const caret = wrapper.querySelector('[data-dropdown-caret]');
+
+                    if (menu) menu.classList.add('hidden'), menu.setAttribute('aria-hidden', 'true');
+                    if (btn) btn.setAttribute('aria-expanded', 'false');
+                    if (caret) caret.classList.remove('rotate-180');
+                });
+            }
+
+            DROPDOWNS.forEach(wrapper => {
+                const btn = wrapper.querySelector('[data-dropdown-button]');
+                const menu = wrapper.querySelector('[data-dropdown-menu]');
+                const caret = wrapper.querySelector('[data-dropdown-caret]');
+
+                if (!btn || !menu) return;
+
+                // When clicking the button: toggle (for mobile)
+                btn.addEventListener('click', (e) => {
+                    // on desktop we keep hover behavior, but allow click to toggle too
+                    const isOpen = !menu.classList.contains('hidden');
+                    closeAll();
+                    if (!isOpen) {
+                        menu.classList.remove('hidden');
+                        menu.setAttribute('aria-hidden', 'false');
+                        btn.setAttribute('aria-expanded', 'true');
+                        if (caret) caret.classList.add('rotate-180');
+                    }
+                    e.stopPropagation();
+                });
+
+                // Hover behavior for desktop: open on mouseenter, close on mouseleave
+                wrapper.addEventListener('mouseenter', () => {
+                    if (!isDesktop()) return;
+                    closeAll();
+                    menu.classList.remove('hidden');
+                    menu.setAttribute('aria-hidden', 'false');
+                    btn.setAttribute('aria-expanded', 'true');
+                    if (caret) caret.classList.add('rotate-180');
+                });
+                wrapper.addEventListener('mouseleave', () => {
+                    if (!isDesktop()) return;
+                    menu.classList.add('hidden');
+                    menu.setAttribute('aria-hidden', 'true');
+                    btn.setAttribute('aria-expanded', 'false');
+                    if (caret) caret.classList.remove('rotate-180');
+                });
+            });
+
+            // Close when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('[data-dropdown]')) closeAll();
+            });
+
+            // Close on Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeAll();
+            });
+
+            // Optional: close all on resize to avoid stale states
+            window.addEventListener('resize', () => closeAll());
+        });
+    </script>
+
 
 </header>

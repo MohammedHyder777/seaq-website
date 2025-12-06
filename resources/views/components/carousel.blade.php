@@ -3,9 +3,9 @@
         <div class="splide__track md:rounded-2xl">
             <div class="splide__list">
                 @foreach([1,2,3,4,5,6] as $i)
-                <div class="splide__slide w-full flex justify-center text-justify md:rounded-2xl shadow-md overflow-hidden hover:shadow-xl">
+                <div class="splide__slide w-full md:w-full flex justify-center text-justify md:rounded-2xl shadow-md overflow-hidden hover:shadow-xl">
                     <img src="{{ asset('images/carousel/' .sprintf('%02d', $i). '.jpeg') }}"
-                        class="w-full h-96 md:h-120 object-fill md:rounded-2xl hover:brightness-65 transition duration-300">
+                        class="w-full h-auto object-fill md:rounded-2xl hover:brightness-65 transition duration-300">
                 </div>
                 @endforeach
             </div>

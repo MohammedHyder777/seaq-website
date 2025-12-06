@@ -7,6 +7,9 @@ return [
     'programs&events' => 'البرامج والفعاليات',
     'about' => 'من نحن؟',
     'join_us' => 'انضم إلينا',
+    'newsletter' => 'مجلة الرابطة',
+    'profile' => 'الملف التعريفي',
+    
     // layouts.app
     'tab_title' => 'رابطة المهندسين',
 
@@ -65,6 +68,11 @@ return [
 
     // about
     'about_tab_title' => 'من نحن؟',
+
+    // newsletter and profile
+    'newsletter_seaq' => 'مجلة رابطة المهندسين السودانيين بقطر',
+    'profile_seaq' => 'ملف الرابطة التعريفي',
+    'download_pdf' => 'تحميل pdf',
 
     // ------------------------------------------
     // admin:
