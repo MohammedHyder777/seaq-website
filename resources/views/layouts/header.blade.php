@@ -1,7 +1,7 @@
 <header class="md:flex flex-row justify-start items-center">
     <!-- Logo for wide screens -->
     <a class="hidden md:block my-4 mr-4 p-2 mh-logo-border" href="{{ url('/') }}">
-        <img src="{{ asset('images/logos/logo-w-text.png') }}" height="110" width="177" alt="الشعار">
+        <img src="{{ asset('images/logos/logo.png') }}" height="110" width="177" alt="الشعار">
     </a>
     <nav class="hidden md:flex relative space-x-1 ps-1 pe-7 bg-teal-500 backdrop-blur-sm border border-teal-600/90 shadow-lg text-slate-100 w-full z-[9999]">
         @if(auth()->user()?->is_admin)

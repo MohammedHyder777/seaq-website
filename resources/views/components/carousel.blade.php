@@ -5,7 +5,7 @@
                 @foreach([1,2,3,4,5,6] as $i)
                 <div class="splide__slide w-full md:w-full flex justify-center text-justify md:rounded-2xl shadow-md overflow-hidden hover:shadow-xl">
                     <img src="{{ asset('images/carousel/' .sprintf('%02d', $i). '.jpeg') }}"
-                        class="w-full h-auto object-fill md:rounded-2xl hover:brightness-65 transition duration-300">
+                        class="w-full h-[52.25svw] md:h-[39.1875svw] object-fill md:rounded-2xl hover:brightness-65 transition duration-300">
                 </div>
                 @endforeach
             </div>
