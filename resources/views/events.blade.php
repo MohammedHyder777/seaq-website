@@ -6,7 +6,7 @@
 <div class="container mx-auto px-4 py-10">
     <h2 class="page-header">{{__('strings.programs&events')}}</h2>
 
-    <div class="space-y-6">
+    <div class="mt-15 space-y-6">
         @foreach ($events as $event)
         <div class="mh-card flex flex-col h-fit md:flex-row bg-white rounded-2xl shadow-md hover:shadow-lg opacity-0 translate-y-10 transition-all duration-700 ease-out">
 

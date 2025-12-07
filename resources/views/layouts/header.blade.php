@@ -1,24 +1,27 @@
 <header class="md:flex flex-row justify-start items-center">
     <!-- Logo for wide screens -->
-    <a class="hidden md:block my-4 mr-4 p-2 mh-logo-border" href="{{ url('/') }}">
-        <img src="{{ asset('images/logos/logo.png') }}" height="110" width="177" alt="الشعار">
-    </a>
-    <nav class="hidden md:flex relative space-x-1 ps-1 pe-7 bg-teal-500 backdrop-blur-sm border border-teal-600/90 shadow-lg text-slate-100 w-full z-[9999]">
+    <!-- <a class="hidden md:block my-4 ms-4 p-2 mh-logo-border" href="{{ url('/') }}">
+        <img src="{{ asset('images/logos/logo-w-text.png') }}" height="110" width="177" alt="الشعار">
+    </a> -->
+    <nav class="hidden md:flex items-stretch relative space-x-1 ps-1 pe-7 bg-teal-500 backdrop-blur-sm border border-teal-600/90 shadow-lg text-slate-100 w-full z-[9999]">
+        <a class="hidden md:block items-center my-2 ms-4 me-5 px-2 py-1 bg-white rounded-full shadow-lg z-50" href="{{ url('/') }}">
+            <img src="{{ asset('images/logos/logo.png') }}" height="62.3333" width="100.3" alt="الشعار">
+        </a>
         @if(auth()->user()?->is_admin)
-        <a class="py-3 px-3 text-xl font-medium {{ request()->routeIs('admin.dashboard')? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('admin.dashboard') }}">{{__('strings.dashboard')}}</a>
+        <a class="flex items-center px-3 text-xl font-medium {{ request()->routeIs('admin.dashboard')? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('admin.dashboard') }}">{{__('strings.dashboard')}}</a>
         @endif
-        <a class="py-3 px-3 text-xl font-medium {{ Request::is('/')? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('home') }}">{{__('strings.home')}}</a>
-        <a class="py-3 px-3 text-xl font-medium {{ Request::is('events')? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('events') }}">{{__('strings.programs&events')}}</a>
-        <a class="py-3 px-3 text-xl font-medium {{ Request::is('join') ? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('join') }}">{{__('strings.join_us')}}</a>
+        <a class="flex items-center px-3 text-xl font-medium {{ Request::is('/')? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('home') }}">{{__('strings.home')}}</a>
+        <a class="flex items-center px-3 text-xl font-medium {{ Request::is('events')? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('events') }}">{{__('strings.programs&events')}}</a>
+        <a class="flex items-center px-3 text-xl font-medium {{ Request::is('join') ? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('join') }}">{{__('strings.join_us')}}</a>
         <!-- <a class="py-3 px-3 text-xl font-medium {{ Request::is('about') ? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('about') }}">{{__('strings.about')}}</a> -->
         
         <!-- Dropdown wrapper -->
         
-        <div class="relative" data-dropdown>
+        <div class="relative flex items-center" data-dropdown>
             <!-- Toggle button -->
             <button
                 type="button"
-                class="flex items-center gap-2 py-3 px-3 text-xl transition"
+                class="flex items-center gap-2 px-3 text-xl font-medium transition"
                 data-dropdown-button
                 aria-expanded="false">
                 {{__('strings.about')}}
@@ -29,7 +32,7 @@
 
             <!-- Menu -->
             <div
-                class="absolute left-0 w-max bg-slate-100 pt-3 pb-7 rounded-lg shadow-lg ring-1 ring-teal-700/60 hidden" style="z-index: -1;"
+                class="absolute top-[75%] start-[40%] w-max bg-slate-100 pt-3 pb-7 rounded-lg shadow-lg ring-1 ring-teal-700/60 hidden" style="z-index: -1;"
                 data-dropdown-menu
                 role="menu"
                 aria-hidden="true">
@@ -39,13 +42,13 @@
             </div>
         </div>
 
-        <div class="ms-auto flex items-center m-1 rounded-4xl bg-white text-teal-600">
+        <div class="ms-auto flex items-center my-3 rounded-4xl bg-white text-teal-600">
             @if(app()->getLocale() == "ar")
-            <a href="{{ route('lang.switch', 'en') }}" class="px-3 py-3 text-sm">
+            <a href="{{ route('lang.switch', 'en') }}" class="px-3 text-sm">
                 English
             </a>
             @else
-            <a href="{{ route('lang.switch', 'ar') }}" class="px-3 py-3 text-sm">
+            <a href="{{ route('lang.switch', 'ar') }}" class="px-3 text-sm">
                 العربية
             </a>
             @endif
@@ -78,9 +81,9 @@
             <a class="text-lg font-medium ps-2 {{ Request::is('events') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('events') }}">{{__('strings.programs&events')}}</a>
             <a class="text-lg font-medium ps-2 {{ Request::is('join') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('join') }}">{{__('strings.join_us')}}</a>
             <a class="text-lg font-medium ps-2 {{ Request::is('about') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('about') }}">{{__('strings.about')}}</a>
-            <a class="text-lg font-medium ps-6 {{ Request::is('about') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('about') }}">{{__('strings.about_seaq')}}</a>
-            <a class="text-lg font-medium ps-6 {{ Request::is('profile') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('profile') }}">{{__('strings.profile')}}</a>
-            <a class="text-lg font-medium ps-6 {{ Request::is('newsletter') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('newsletter') }}">{{__('strings.newsletter')}}</a>
+            <a class="text-lg font-medium ps-6 {{ Request::is('about') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('about') }}">- {{__('strings.about_seaq')}}</a>
+            <a class="text-lg font-medium ps-6 {{ Request::is('profile') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('profile') }}">- {{__('strings.profile')}}</a>
+            <a class="text-lg font-medium ps-6 {{ Request::is('newsletter') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('newsletter') }}">- {{__('strings.newsletter')}}</a>
         </div>
         <div class="items-center m-1 py-1 px-2 rounded-2xl bg-white w-fit">
             @if(app()->getLocale() != 'ar')
