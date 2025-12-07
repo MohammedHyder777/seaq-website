@@ -24,7 +24,7 @@
 
   @include('layouts.header')
 
-  <main class="flex-grow container mx-auto px-4 py-4 overflow-x-hidden">
+  <main class="flex-grow container mx-auto px-4 py-4 overflow-hidden">
     @yield('content')
   </main>
 

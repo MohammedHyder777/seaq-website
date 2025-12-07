@@ -1,6 +1,6 @@
     <!-- Splide -->
     <div id="CarouselSplide" class="splide">
-        <div class="splide__track md:rounded-2xl">
+        <div class="splide__track md:rounded-2xl overflow-y-hidden">
             <div class="splide__list">
                 @foreach([1,2,3,4,5,6] as $i)
                 <div class="splide__slide w-full md:w-full flex justify-center text-justify md:rounded-2xl shadow-md overflow-hidden hover:shadow-xl">

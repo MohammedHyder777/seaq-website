@@ -10,9 +10,9 @@
     <button class="fancy-btn text-md text-center rounded-2xl p-3">{{__('strings.download_pdf')}} <i class="fa-solid fa-download"></i></button>
   </a>
   
-  <iframe src="{{ asset('pdf/newsletter.pdf') }}" class="w-full h-screen"></iframe>
+  <iframe src="{{ asset('pdf/newsletter.pdf') }}" class="w-full h-screen" allowfullscreen></iframe>
 
-  <a href="{{ asset('pdf/newsletter.pdf') }}" download>
+  <a href="{{ asset('pdf/newsletter.pdf') }}" download class="hidden md:block">
     <button class="fancy-btn text-md text-center rounded-2xl p-3">{{__('strings.download_pdf')}} <i class="fa-solid fa-download"></i></button>
   </a>
 </div>

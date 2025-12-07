@@ -7,7 +7,7 @@
 
 <div class="flex flex-col items-center">
 
-  <!-- <div class="mb-16 text-justify md:w-2/3 shadow-2xl max-md:max-w-[100vw] max-md:relative 
+  <!-- <div class="mb-16 text-justify md:w-3/4 shadow-2xl max-md:max-w-[100vw] max-md:relative 
             max-md:ml-[calc(-50vw+50%)] max-md:mr-[calc(-50vw+50%)] md:rounded-2xl"> -->
   <div class="mb-8 text-justify w-screen max-sm:-px-4 md:w-3/4 md:rounded-2xl shadow-2xl">
     @include('components.carousel', ['posts' => $posts])
@@ -15,18 +15,18 @@
 
   <h2 class="!mb-8 md:hidden !text-xl text-center page-header transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">رابطة المهندســين السودانيين بدولة قطر<br>Sudanese Engineers Association - Qatar</h2>
 
-  <div class="mb-6 p-7 text-justify w-2/3 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">
+  <div class="mb-6 p-7 text-justify w-3/4 md:w-3/5 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">
     <h2 class="text-2xl font-bold text-teal-600 mb-6 text-center">{{__('strings.our_vision')}} 🔭</h2>
     {{__('strings.vision_body')}}
   </div>
 
-  <div class="mb-6 p-7 text-justify w-2/3  bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">
+  <div class="mb-6 p-7 text-justify w-3/4 md:w-3/5  bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">
     <h2 class="text-2xl font-bold text-teal-600 mb-6 text-center">{{__('strings.our_mission')}} 📜</h2>
     {{__('strings.mission_body')}}
   </div>
 
 
-  <div class="flex flex-col items-center justify-center w-2/3 gap-8 m-5 mb-10 transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">
+  <div class="flex flex-col items-center justify-center w-3/4 gap-8 m-5 mb-10 transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">
     <h2 class="text-2xl font-bold text-teal-600 text-center">
       {{__('strings.objectives')}} <i class="fa-solid fa-crosshairs"></i>
     </h2>

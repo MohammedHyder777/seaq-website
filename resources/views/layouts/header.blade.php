@@ -78,8 +78,8 @@
             <a class="text-lg font-medium ps-2 {{ Request::is('events') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('events') }}">{{__('strings.programs&events')}}</a>
             <a class="text-lg font-medium ps-2 {{ Request::is('join') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('join') }}">{{__('strings.join_us')}}</a>
             <a class="text-lg font-medium ps-2 {{ Request::is('about') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('about') }}">{{__('strings.about')}}</a>
-            <a class="text-lg font-medium ps-2 {{ Request::is('newsletter') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('newsletter') }}">{{__('strings.newsletter')}}</a>
-            <a class="text-lg font-medium ps-2 {{ Request::is('profile') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('profile') }}">{{__('strings.profile')}}</a>
+            <a class="text-lg font-medium ps-6 {{ Request::is('newsletter') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('newsletter') }}">{{__('strings.newsletter')}}</a>
+            <a class="text-lg font-medium ps-6 {{ Request::is('profile') ? 'text-sky-600 bg-slate-100' : 'text-teal-800 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('profile') }}">{{__('strings.profile')}}</a>
         </div>
         <div class="items-center m-1 py-1 px-2 rounded-2xl bg-white w-fit">
             @if(app()->getLocale() != 'ar')
