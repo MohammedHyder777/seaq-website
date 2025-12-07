@@ -35,7 +35,7 @@ class SettingController extends Controller
     public function uploadProfilePdf(Request $request)
     {
         $request->validate([
-            'profile_pdf' => 'required|mimes:pdf|max:2048',
+            'profile_pdf' => 'required|mimes:pdf|max:51200', // 50 MB
         ]);
 
         // Delete the old file if it exists
@@ -57,7 +57,7 @@ class SettingController extends Controller
     public function uploadNewsletterPdf(Request $request)
     {
         $request->validate([
-            'newsletter_pdf' => 'required|mimes:pdf|max:2048',
+            'newsletter_pdf' => 'required|mimes:pdf|max:51200', // 50 MB
         ]);
 
         // Delete the old file if it exists
@@ -72,6 +72,6 @@ class SettingController extends Controller
         // Save the new path in settings
         Setting::set('newsletter_pdf', $path);
 
-        return back()->with('success', 'حُفظ الإصدار الجديد من المجلة');
+        return back()->with('success', 'حُفظ الإصدار الجديد من المجلة $old');
     }
 }

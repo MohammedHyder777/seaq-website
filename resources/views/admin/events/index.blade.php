@@ -10,8 +10,7 @@
   </div>
 
   @if(session('success'))
-  <div class="w-fit flex gap-5 text-center m-auto mb-4 bg-green-100 border border-green-300 text-green-800 px-4 py-3 rounded-lg">
-    {{ session('success') }}
+  <div class="font-[Cairo] w-fit flex gap-5 text-center m-auto mb-4 bg-green-100 border border-green-300 text-green-800 px-4 py-3 rounded-lg">    {{ session('success') }}
     <button class="hover:cursor-pointer" onclick="this.parentElement.style.display='none'">x</button>
   </div>
   @endif

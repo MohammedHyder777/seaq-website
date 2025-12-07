@@ -16,8 +16,7 @@
 
   <div class="self-center gap-5 w-3/4 mx-5 my-5">
     @if(session('success'))
-    <div class="w-fit flex gap-5 text-center m-auto mb-4 bg-green-100 border border-green-300 text-green-800 px-4 py-3 rounded-lg">
-      {{ session('success') }}
+    <div class="font-[Cairo] w-fit flex gap-5 text-center m-auto mb-4 bg-green-100 border border-green-300 text-green-800 px-4 py-3 rounded-lg">      {{ session('success') }}
       <button class="hover:cursor-pointer" onclick="this.parentElement.style.display='none'">x</button>
     </div>
     @endif
@@ -29,7 +28,7 @@
       <label class="block w-50 text-md font-semibold">{{__('strings.profile_file')}} (PDF)</label>
       <div class="flex flex-row justify-between gap-5">
         <input type="file" name="profile_pdf" accept="application/pdf"
-          class="border p-2 rounded w-full">
+          class="text-xs border p-2 rounded w-full hover:cursor-pointer">
 
         {{-- Open current profile if it exists --}}
         @php $pdf = \App\Models\Setting::get('profile_pdf'); @endphp
@@ -57,7 +56,7 @@
       <label class="block w-50 text-md font-semibold">{{__('strings.newsletter_file')}} (PDF)</label>
       <div class="flex flex-row justify-between gap-5">
         <input type="file" name="newsletter_pdf" accept="application/pdf"
-          class="border p-2 rounded w-full">
+          class="text-xs border p-2 rounded w-full hover:cursor-pointer">
 
         {{-- Open current newsletter if it exists --}}
         @php $pdf = \App\Models\Setting::get('newsletter_pdf'); @endphp
