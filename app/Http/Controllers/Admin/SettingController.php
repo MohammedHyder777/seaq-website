@@ -72,6 +72,6 @@ class SettingController extends Controller
         // Save the new path in settings
         Setting::set('newsletter_pdf', $path);
 
-        return back()->with('success', 'حُفظ الإصدار الجديد من المجلة $old');
+        return back()->with('success', 'حُفظ الإصدار الجديد من المجلة');
     }
 }
