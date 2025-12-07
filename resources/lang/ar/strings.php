@@ -6,6 +6,7 @@ return [
     'home' => 'الرئيسة',
     'programs&events' => 'البرامج والفعاليات',
     'about' => 'من نحن؟',
+    'about_seaq' => 'عن الرابطة',
     'join_us' => 'انضم إلينا',
     'newsletter' => 'مجلة الرابطة',
     'profile' => 'الملف التعريفي',

@@ -44,6 +44,11 @@ Route::middleware(['auth', IsAdmin::class,
 
     Route::get('/dashboard', fn() => view('admin.dashboard'))->name('dashboard');
 
+    Route::post('/setProfilePdf', [SettingController::class, 'uploadProfilePdf'])
+        ->name('setProfilePdf');
+    Route::post('/setNewsletterPdf', [SettingController::class, 'uploadNewsletterPdf'])
+        ->name('setNewsletterPdf');
+
     Route::get('/aboutus', [SettingController::class, 'editAboutUs'])->name('aboutus');
     Route::post('/aboutus', [SettingController::class, 'updateAboutUs'])->name('aboutus.update');
     

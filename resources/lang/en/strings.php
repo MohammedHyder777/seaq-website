@@ -6,6 +6,7 @@ return [
     'home' => 'Home',
     'programs&events' => 'Programs & Events',
     'about' => 'About Us',
+    'about_seaq' => 'About SEAQ',
     'join_us' => 'Join Us',
     'newsletter' => 'Our News Letter',
     'profile' => 'Our Profile',
