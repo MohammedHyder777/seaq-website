@@ -94,6 +94,10 @@ return [
     'posts' => 'Posts',
     'events' => 'Events',
     'about_us_page' => 'About Us Page',
+    
+    'profile_file' => 'Profile File',
+    'newsletter_file' => 'SEAQ Newsletter',
+    'current_file' => 'Current file',
 
     //posts.index
     'posts_management' => 'Posts Management',

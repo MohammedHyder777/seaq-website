@@ -26,7 +26,7 @@
       class="flex flex-col md:flex-row w-full md:items-center  gap-5">
       @csrf
 
-      <label class="block w-50 text-md font-semibold">ملف البروفايل (PDF)</label>
+      <label class="block w-50 text-md font-semibold">{{__('strings.profile_file')}} (PDF)</label>
       <div class="flex flex-row justify-between gap-5">
         <input type="file" name="profile_pdf" accept="application/pdf"
           class="border p-2 rounded w-full">
@@ -36,13 +36,13 @@
         @if($pdf)
         <a href="{{ asset('storage/'.$pdf) }}" target="_blank"
           class="text-sm text-teal-600 underline">
-          الملف الحالي
+          {{__('strings.current_file')}}
         </a>
         @endif
       </div>
 
       <button type="submit"
-        class="mt-3 bg-teal-600 text-white px-6 py-2 rounded hover:bg-teal-700">
+        class="mt-3 bg-teal-600 text-white px-6 py-2 rounded hover:bg-teal-700 hover:cursor-pointer">
         {{__('strings.save')}}
       </button>
     </form>
@@ -54,7 +54,7 @@
       class="flex flex-col md:flex-row w-full md:items-center justify-beteen gap-5">
       @csrf
 
-      <label class="block w-50 text-md font-semibold">مجلة الرابطة (PDF)</label>
+      <label class="block w-50 text-md font-semibold">{{__('strings.newsletter_file')}} (PDF)</label>
       <div class="flex flex-row justify-between gap-5">
         <input type="file" name="newsletter_pdf" accept="application/pdf"
           class="border p-2 rounded w-full">
@@ -64,13 +64,13 @@
         @if($pdf)
         <a href="{{ asset('storage/'.$pdf) }}" target="_blank"
           class="text-sm text-teal-600 underline">
-          الملف الحالي
+          {{__('strings.current_file')}}
         </a>
         @endif
       </div>
 
       <button type="submit"
-        class="mt-3 bg-teal-600 text-white px-6 py-2 rounded hover:bg-teal-700">
+        class="mt-3 bg-teal-600 text-white px-6 py-2 rounded hover:bg-teal-700  hover:cursor-pointer">
         {{__('strings.save')}}
       </button>
     </form>

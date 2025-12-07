@@ -96,6 +96,10 @@ return [
     'events' => 'الفعاليات',
     'about_us_page' => 'صفحة من نحن؟',
 
+    'profile_file' => 'ملف البروفايل',
+    'newsletter_file' => 'مجلة الرابطة',
+    'current_file' => 'الملف الحالي',
+
     //posts.index
     'posts_management' => 'إدارة المنشورات',
     'new_post' => 'منشور جديد',
