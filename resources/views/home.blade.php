@@ -75,7 +75,7 @@
     {{-- Image --}}
     <!-- <div class=""> -->
     <img src="{{ isset($post->image)? asset('storage/'.$post->image) : asset('images/logos/logo-w-text.png') }}"
-      class="w-1/2 h-full object-fill" alt="خبر">
+      class="w-1/2 aspect-[16/9] object-cover" alt="خبر">
     <!-- </div> -->
 
     @php
