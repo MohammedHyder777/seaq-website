@@ -1,39 +1,47 @@
-/* From Uiverse.io by CristianMontoya98 */ 
+/* Fancy button base */
 .fancy-btn {
- /* width: 6.5em;
- height: 2.3em; */
- margin: 0.5em;
- background: #009687;
- color: white;
- border: 1px solid;
- /* border-radius: 0.625em; */
- /* font-size: 20px; */
- /* font-weight: bold; */
- cursor: pointer;
- position: relative;
- z-index: 1;
- overflow: hidden;
+  margin: 0.5em;
+  background: #009687;
+  color: white;
+  border: 1px solid;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: transform 0.15s ease, filter 0.15s ease;
 }
 
+/* Hover (desktop) */
 .fancy-btn:hover {
- color: teal;
+  color: teal;
 }
 
+/* Touch/Click effect (mobile + desktop) */
+.fancy-btn:active {
+  transform: scale(0.96);      /* Small tap animation */
+  filter: brightness(0.85);    /* Visual feedback */
+}
+
+/* Animated background */
 .fancy-btn:after {
- content: "";
- background: white;
- position: absolute;
- z-index: -1;
- left: -20%;
- right: -20%;
- top: 0;
- bottom: 0;
- transform: skewX(-45deg) scale(0, 1);
- transition: all 0.5s;
+  content: "";
+  background: white;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s ease;
 }
 
+/* Hover effect */
 .fancy-btn:hover:after {
- transform: skewX(-45deg) scale(1, 1);
- -webkit-transition: all 0.5s;
- transition: all 0.5s;
+  transform: skewX(-45deg) scale(1, 1);
+}
+
+/* Touch effect (same as hover) */
+.fancy-btn:active:after {
+  transform: skewX(-45deg) scale(1, 1);
 }

@@ -13,6 +13,7 @@
         <a class="flex items-center px-3 text-xl font-medium {{ Request::is('/')? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('home') }}">{{__('strings.home')}}</a>
         <a class="flex items-center px-3 text-xl font-medium {{ Request::is('events')? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('events') }}">{{__('strings.programs&events')}}</a>
         <a class="flex items-center px-3 text-xl font-medium {{ Request::is('join') ? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('join') }}">{{__('strings.join_us')}}</a>
+        <a class="flex items-center px-3 text-xl font-medium {{ Request::is('career') ? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('career') }}">{{__('strings.career_development')}}</a>
         <!-- <a class="py-3 px-3 text-xl font-medium {{ Request::is('about') ? 'text-sky-600 bg-slate-100' : 'text-neutral-100 hover:text-sky-600 hover:bg-slate-100' }}" href="{{ route('about') }}">{{__('strings.about')}}</a> -->
         
         <!-- Dropdown wrapper -->

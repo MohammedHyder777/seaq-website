@@ -5,9 +5,10 @@ return [
     'seaq_name' => 'رابطه المهندسين السودانيين بدولة قطر',
     'home' => 'الرئيسة',
     'programs&events' => 'البرامج والفعاليات',
+    'join_us' => 'انضم إلينا',
+    'career_development' => 'التطوير المهني',
     'about' => 'من نحن؟',
     'about_seaq' => 'عن الرابطة',
-    'join_us' => 'انضم إلينا',
     'newsletter' => 'مجلة الرابطة',
     'profile' => 'الملف التعريفي',
     
@@ -66,6 +67,9 @@ return [
     'join_the_association' => 'انضم إلى الرابطة',
     'fill_membership_form' => 'ملء نموذج العضوية',
     'join_body' => 'كن عضوا في رابطة المهندسين السودانيين بقطر',
+
+    // career
+    'download' => 'تنزيل',
 
     // about
     'about_tab_title' => 'من نحن؟',

@@ -5,9 +5,10 @@ return [
     'seaq_name' => 'Sudanese Engineers Association in Qatar',
     'home' => 'Home',
     'programs&events' => 'Programs & Events',
+    'join_us' => 'Join Us',
+    'career_development' => 'Career Development',
     'about' => 'About Us',
     'about_seaq' => 'About SEAQ',
-    'join_us' => 'Join Us',
     'newsletter' => 'Our News Letter',
     'profile' => 'Our Profile',
     
@@ -31,7 +32,7 @@ return [
     'vision_body' => 'To support and empower Sudanese engineers residing in Qatar to become the most distinguished professionals in their field — globally recognized for excellence, innovation, and integrity. SEAQ strives to foster growth, efficiency, and professional leadership by investing in human capital, promoting sustainable engineering practices, and driving technological and socio-economic advancement within both the Qatari and Sudanese communities.',
 
     'our_mission' => 'Our Mission',
-    'mission_body' => 'To provide comprehensive support to Sudanese engineers residing in Qatar through well-planned volunteer initiatives that strengthen communication and collaboration among members while fostering a stimulating environment for professional, academic, and social development. <br>We also strive to be an active part of both the local and international community, contributing to the creation of a better and more sustainable world.',
+    'mission_body' => 'To provide comprehensive support to Sudanese engineers residing in Qatar through well-planned volunteer initiatives that strengthen communication and collaboration among members while fostering a stimulating environment for professional, academic, and social development. We also strive to be an active part of both the local and international community, contributing to the creation of a better and more sustainable world.',
 
     'objectives' => 'Our Objectives',
     'objectives_body' => '<ol style="list-style:decimal;">
@@ -68,6 +69,9 @@ return [
 
     // about
     'about_tab_title' => 'About Us',
+
+    // career
+    'download' => 'Download',
 
     // newsletter and profile
     'newsletter_seaq' => 'The SEAQ Newsletter',

@@ -14,8 +14,9 @@ use App\Models\Setting;
 
 
 Route::get('/', fn() => view('home', ['posts' => Post::scopeShownAtHome()]))->name('home');
-Route::get('/join', fn() => view('join'))->name('join');
 Route::get('/events', fn() => view('events', ['events' => Event::scopeShown()]))->name('events');
+Route::get('/join', fn() => view('join'))->name('join');
+Route::get('/career', fn() => view('career'))->name('career');
 Route::get('/about', fn() => view('about', ['content' => Setting::get(app()->getLocale() == "ar"? "about_us_content" : "about_us_content_en")]))->name('about');
 Route::get('/newsletter', fn() => view('newsletter'))->name('newsletter');
 Route::get('/profile', fn() => view('profile'))->name('profile');
