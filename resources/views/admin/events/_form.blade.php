@@ -103,7 +103,7 @@
       💾 {{__('strings.save')}}
     </button>
     <a href="{{ route('admin.events.index') }}"
-      class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded-xl font-medium transition">
+      class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded-xl font-medium transition hover:cursor-pointer">
       {{__('strings.cancel')}}
     </a>
   </div>

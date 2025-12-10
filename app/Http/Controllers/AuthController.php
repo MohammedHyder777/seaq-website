@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -36,6 +37,30 @@ class AuthController extends Controller
         return back()->withErrors([
             'error' => 'معلومات الدخول غير صحيحة.',
         ]);
+    }
+
+
+    public function changePassword(Request $request)
+    {
+        $request->validate([
+            'old_pw' => ['required'],
+            'new_pw' => ['required', 'min:6'],
+            'new_pw_confirmation' => ['required', 'same:new_pw'],
+        ]);
+
+        $user = Auth::user();
+
+        
+        if (!Hash::check($request->old_pw, $user->password)) {
+            return back()->withErrors(['old_pw' => 'كلمة المرور الحالية غير صحيحة'.$user->password]);
+        }
+
+        
+        $user->update([
+            'password' => Hash::make($request->new_pw)
+        ]);
+
+        return back()->with('pw_success', 'غُيِّرت كلمة المرور');
     }
 
     public function logout(Request $request)

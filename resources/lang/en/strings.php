@@ -6,7 +6,7 @@ return [
     'home' => 'Home',
     'programs&events' => 'Programs & Events',
     'join_us' => 'Join Us',
-    'career_development' => 'Career Development',
+    'career_development' => 'Professional Development',
     'about' => 'About Us',
     'about_seaq' => 'About SEAQ',
     'newsletter' => 'Our News Letter',

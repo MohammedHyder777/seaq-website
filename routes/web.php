@@ -49,6 +49,8 @@ Route::middleware(['auth', IsAdmin::class,
         ->name('setProfilePdf');
     Route::post('/setNewsletterPdf', [SettingController::class, 'uploadNewsletterPdf'])
         ->name('setNewsletterPdf');
+    Route::post('/changePassword', [AuthController::class, 'changePassword'])
+        ->name('changePassword');
 
     Route::get('/aboutus', [SettingController::class, 'editAboutUs'])->name('aboutus');
     Route::post('/aboutus', [SettingController::class, 'updateAboutUs'])->name('aboutus.update');

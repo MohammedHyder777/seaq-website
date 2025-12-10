@@ -21,7 +21,7 @@
 
     <div class="mb-4">
       <label class="block text-gray-700 mb-2">{{__('strings.email')}}</label>
-      <input type="email" name="email" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-teal-500 focus:border-teal-500">
+      <input type="email" name="email" value="{{ old('email', '') }}" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-teal-500 focus:border-teal-500">
     </div>
 
     <div class="mb-4">
