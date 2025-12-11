@@ -20,7 +20,7 @@ Route::get('/join', fn() => view('join'))->name('join');
 // Route::get('/career', fn() => view('career'))->name('career');
 Route::get('/career', function () {
     $dir = public_path('library');
-    $files = dd(collect(scandir($dir)))
+    $files = collect(scandir($dir))
         ->filter(fn($file) => Str::endsWith($file, '.pdf'))
         ->map(function ($file) {
             $name = basename($file, '.pdf'); // "filename - author"
@@ -33,7 +33,7 @@ Route::get('/career', function () {
             ];
         });
 
-    return view('career', compact('files'));
+    return view('career', ['files' => $files]);
 })->name('career');
 Route::get('/about', fn() => view('about', ['content' => Setting::get(app()->getLocale() == "ar" ? "about_us_content" : "about_us_content_en")]))->name('about');
 Route::get('/newsletter', fn() => view('newsletter'))->name('newsletter');
