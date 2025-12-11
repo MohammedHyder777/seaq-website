@@ -47,6 +47,10 @@ body {
     @apply font-[Shamel] font-normal text-lg bg-slate-100;
 }
 
+body:lang(en) {
+    @apply font-[Cairo];
+}
+
 
 header {
     /* @apply ; */

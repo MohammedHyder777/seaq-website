@@ -17,12 +17,12 @@
 
   <img src="{{ asset('images/logos/logo-w-text.png') }}" class="mb-8 w-2/3 md:h-[24.78svw] md:w-[40svw] transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out" alt="seaq">
 
-  <div class="mb-6 p-7 text-justify w-3/4 md:w-3/5 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">
+  <div class="mb-6 p-7 text-justify w-5/6 md:w-3/5 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">
     <h2 class="text-2xl font-bold text-teal-600 mb-6 text-center">{{__('strings.our_vision')}} 🔭</h2>
     {{__('strings.vision_body')}}
   </div>
 
-  <div class="mb-6 p-7 text-justify w-3/4 md:w-3/5  bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">
+  <div class="mb-6 p-7 text-justify w-5/6 md:w-3/5  bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">
     <h2 class="text-2xl font-bold text-teal-600 mb-6 text-center">{{__('strings.our_mission')}} 📜</h2>
     {{__('strings.mission_body')}}
   </div>
