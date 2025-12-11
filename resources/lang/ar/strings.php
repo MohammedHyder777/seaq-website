@@ -2,7 +2,7 @@
 
 return [
     // layouts.header
-    'seaq_name' => 'رابطه المهندسين السودانيين بدولة قطر',
+    'seaq_name' => 'رابطة المهندسين السودانيين بدولة قطر',
     'home' => 'الرئيسة',
     'programs&events' => 'البرامج والفعاليات',
     'join_us' => 'انضم إلينا',
@@ -103,6 +103,11 @@ return [
     'profile_file' => 'ملف البروفايل',
     'newsletter_file' => 'مجلة الرابطة',
     'current_file' => 'الملف الحالي',
+
+    'change_pw' => 'تغيير كلمة المرور',
+    'current_pw' => 'كلمة المرور الحالية',
+    'new_pw' => 'كلمة المرور الجديدة',
+    'confirm' => 'تأكيد',
 
     //posts.index
     'posts_management' => 'إدارة المنشورات',

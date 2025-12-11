@@ -88,7 +88,7 @@
 
     <button onclick="pwModal.showModal()"
       class="text-center bg-teal-600 hover:bg-teal-700 text-white px-6 pt-4 pb-3 rounded-xl shadow-md transition">
-      تغيير كلمة المرور 🔐
+      {{__('strings.change_pw')}} 🔐
     </button>
 
     @error('old_pw')
@@ -107,23 +107,23 @@
   <!-- Modal Box -->
   <div class="bg-white w-10/12 md:w-2/3 lg:w-1/3 m-auto p-6 rounded-xl shadow-xl relative">
 
-    <h2 class="page-header !text-xl">تغيير كلمة المرور</h2>
+    <h2 class="page-header !text-xl">{{__('strings.change_pw')}}</h2>
     
     <form action="{{ route('admin.changePassword') }}" method="POST" class="flex flex-col gap-4">
       @csrf
 
-      <div>
-        <label>كلمة المرور الحالية</label>
+      <div class="flex flex-col gap-2">
+        <label>{{__('strings.current_pw')}}</label>
         <input type="password" name="old_pw" class="border p-2 rounded w-full" required>
       </div>
 
-      <div>
-        <label>كلمة المرور الجديدة</label>
+      <div class="flex flex-col gap-2">
+        <label>{{__('strings.new_pw')}}</label>
         <input type="password" name="new_pw" class="border p-2 rounded w-full" required>
       </div>
 
-      <div>
-        <label>تأكيد كلمة المرور الجديدة</label>
+      <div class="flex flex-col gap-2">
+        <label>{{__('strings.confirm')}} {{__('strings.new_pw')}}</label>
         <input type="password" name="new_pw_confirmation" class="border p-2 rounded w-full" required>
       </div>
 

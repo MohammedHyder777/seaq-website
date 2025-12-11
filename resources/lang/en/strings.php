@@ -11,7 +11,7 @@ return [
     'about_seaq' => 'About SEAQ',
     'newsletter' => 'Our News Letter',
     'profile' => 'Our Profile',
-    
+
     // layouts.app
     'tab_title' => 'Engineers Association',
 
@@ -98,10 +98,16 @@ return [
     'posts' => 'Posts',
     'events' => 'Events',
     'about_us_page' => 'About Us Page',
-    
+
     'profile_file' => 'Profile File',
     'newsletter_file' => 'SEAQ Newsletter',
     'current_file' => 'Current file',
+
+    'change_pw' => 'Change Password',
+    'current_pw' => 'Current Password',
+    'new_pw' => 'New Password',
+    'confirm' => 'Confirm',
+
 
     //posts.index
     'posts_management' => 'Posts Management',
