@@ -14,7 +14,8 @@
     <button class="fancy-btn text-md text-center rounded-2xl p-3">{{__('strings.download_pdf')}} <i class="fa-solid fa-download"></i></button>
   </a>
   
-  <iframe src="{{ asset('storage/' . $newsletterPdf) }}" class="w-full h-screen" allowfullscreen></iframe>
+  <iframe src="{{ asset('storage/' . $newsletterPdf) }}" 
+          class="hidden md:block w-full h-screen" allowfullscreen></iframe>
 
   <a href="{{ asset('storage/' . $newsletterPdf) }}" download class="hidden md:block">
     <button class="fancy-btn text-md text-center rounded-2xl p-3">{{__('strings.download_pdf')}} <i class="fa-solid fa-download"></i></button>
