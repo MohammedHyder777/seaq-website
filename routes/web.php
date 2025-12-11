@@ -20,7 +20,7 @@ Route::get('/join', fn() => view('join'))->name('join');
 // Route::get('/career', fn() => view('career'))->name('career');
 Route::get('/career', function () {
     $dir = public_path('library');
-    $files = collect(scandir($dir))
+    $files = dd(collect(scandir($dir)))
         ->filter(fn($file) => Str::endsWith($file, '.pdf'))
         ->map(function ($file) {
             $name = basename($file, '.pdf'); // "filename - author"
