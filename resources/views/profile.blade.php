@@ -15,7 +15,11 @@
   </a>
   
   <iframe src="{{ asset('storage/' . $profilePdf) }}" 
-          class="hidden md:block w-full h-screen" allowfullscreen></iframe>
+          class="hidden lg:block w-full h-screen" allowfullscreen></iframe>
+  <!-- Notification for tabs and phones -->
+   <div class="text-blue-600 bg-blue-400/30 rounded-2xl p-5 text-center text-base">
+      <p>{!!__('strings.notification_for_tabs_and_phones')!!}</p>
+   </div>
 
   <a href="{{ asset('storage/' . $profilePdf) }}" download class="hidden md:block">
     <button class="fancy-btn text-md text-center rounded-2xl p-3">{{__('strings.download_pdf')}} <i class="fa-solid fa-download"></i></button>

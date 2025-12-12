@@ -77,7 +77,8 @@ return [
     // newsletter and profile
     'newsletter_seaq' => 'مجلة رابطة المهندسين السودانيين بقطر',
     'profile_seaq' => 'ملف الرابطة التعريفي',
-    'download_pdf' => 'تحميل pdf',
+    'download_pdf' => 'تـنزيـل pdf',
+    'notification_for_tabs_and_phones' => 'عرض ملفات ال pdf غير مدعوم في الهواتف والأجهزة اللوحية.<br> نزِّل الملف واستعرضه بكل سهولة!',
 
     // ------------------------------------------
     // admin:

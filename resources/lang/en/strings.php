@@ -77,6 +77,7 @@ return [
     'newsletter_seaq' => 'The SEAQ Newsletter',
     'profile_seaq' => 'The SEAQ Profile',
     'download_pdf' => 'Download pdf',
+    'notification_for_tabs_and_phones' => 'Displaying PDF files is not supported on phones and tablets.<br> Download the file and easily view it!',
 
     // ------------------------------------------
     // admin:
