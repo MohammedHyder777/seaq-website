@@ -13,7 +13,7 @@
     @include('components.carousel')
   </div>
 
-  <!-- <h2 class="!mb-8 !text-xl md:hidden md:!text-2xl text-center page-header transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">رابطة المهندســين السودانيين بدولة قطر<br>Sudanese Engineers Association - Qatar</h2> -->
+  <h2 class="!mb-8 !text-xl hidden md:hidden md:!text-2xl text-center page-header transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out">رابطة المهندســين السودانيين بدولة قطر<br>Sudanese Engineers Association - Qatar</h2>
 
   <img src="{{ asset('images/logos/logo-w-text.png') }}" class="mb-8 w-2/3 md:h-[24.78svw] md:w-[40svw] transition mh-card opacity-0 translate-y-10 transition-all duration-700 ease-out" alt="seaq">
 
