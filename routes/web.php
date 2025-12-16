@@ -82,3 +82,23 @@ Route::middleware([
 
     Route::resource('events', AdminEventController::class);
 });
+
+
+
+// Temporary route to generate the spatie sitemap
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
+
+Route::get('/generate-sitemap', function () {
+    Sitemap::create()
+        ->add(Url::create('/'))
+        ->add(Url::create('/about'))
+        ->add(Url::create('/join'))
+        ->add(Url::create('/career'))
+        ->add(Url::create('/profile'))
+        ->add(Url::create('/newsletter'))
+        ->add(Url::create('/events'))
+        ->writeToFile(public_path('sitemap.xml'));
+
+    return 'Sitemap generated';
+});
