@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow"> <!-- For search engines -->
+  <link rel="canonical" href="{{ url()->current() }}">  <!-- For search engines -->
+
 
   <!-------------------------- FONTS -------------------------->
   <!-- <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet"> -->
