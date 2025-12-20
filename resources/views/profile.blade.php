@@ -17,7 +17,7 @@
   <iframe src="{{ asset('storage/' . $profilePdf) }}" 
           class="hidden lg:block w-full h-screen" allowfullscreen></iframe>
   <!-- Notification for tabs and phones -->
-   <div class="text-blue-600 bg-blue-400/30 rounded-2xl p-5 text-center text-base">
+   <div class="lg:hidden text-blue-600 bg-blue-400/30 rounded-2xl p-5 text-center text-base">
       <p>{!!__('strings.notification_for_tabs_and_phones')!!}</p>
    </div>
 
